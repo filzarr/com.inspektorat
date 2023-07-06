@@ -14,8 +14,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
+});
+Route::get('/post', function () {
+    return view('post');
+});
+Route::get('/irban', function () {
+    return view('irban');
+});
+Route::get('/ppid', function () {
+    return view('ppid');
+});
+Route::get('/informasi', function () {
+    return view('informasi');
+});
+Route::get('/form', function () {
+    return view('forminformasi');
+});
+Route::get('/saberpungli', function () {
+    return view('saberpungli');
 });
 
 Route::get('/dashboard', function () {
