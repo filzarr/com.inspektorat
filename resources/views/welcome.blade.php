@@ -119,9 +119,11 @@
                     </div>
 
                 </div>
-                <div class="flex justify-start">
-                    <p class=" font-semibold text-[#3E6E8B] text-xl">Lihat Berita Lainnya</p>
-                </div>
+                <a href="/berita">
+                    <div class="flex justify-start">
+                        <p class=" font-semibold text-[#3E6E8B] text-xl hover:underline duration-500  translate-x-0 hover:translate-x-1 ease-out ">Lihat Berita Lainnya</p>
+                    </div>
+                </a>
             </div>
             <div class="w-2/6 px-10">
                 <div class="w-full   border-2 border-black/5 bg-[#EFEFF0] px-5 py-3 rounded-md">
@@ -194,16 +196,32 @@
             <div class=" ">
                 <figure class="relative max-w-sm transition-all duration-300 cursor-pointer filter  overflow-hidden">
                     <figcaption class="absolute  z-50 top-3 left-3"><button
-                            class="bg-blue-500 px-2 py-1 rounded-lg text-sm text-white">Konferensi</button>
+                            class="bg-blue-500 px-2 py-1 rounded-lg text-sm text-white">Selesai</button>
                     </figcaption>
                     <a href="#">
                         <img class="rounded-lg scale-100 hover:scale-125 duration-700"
-                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/content-gallery-3.png"
+                            src="con1.jpg"
+                            alt="image description">
+                    </a>
+                    <figcaption class="absolute px-4 text-lg text-white bottom-6">
+                        <p class="text-sm">29 MEI 2023</p>
+                        <p>APEL PAGI SENIN </p>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class=" ">
+                <figure class="relative max-w-sm transition-all duration-300 cursor-pointer filter  overflow-hidden">
+                    <figcaption class="absolute  z-50 top-3 left-3"><button
+                            class="bg-blue-500 px-2 py-1 rounded-lg text-sm text-white">Selesai</button>
+                    </figcaption>
+                    <a href="#">
+                        <img class="rounded-lg scale-100 hover:scale-125 duration-700"
+                            src="con2.jpg"
                             alt="image description">
                     </a>
                     <figcaption class="absolute px-4 text-lg text-white bottom-6">
                         <p class="text-sm">24 November 2023</p>
-                        <p>Do you want to get notified when a new component is added to Flowbite?</p>
+                        <p>RAPAT KOORDINASI SINKRONISASI PROGRAM KAWASAN STRATEGIS PARIWISATA NASIONAL</p>
                     </figcaption>
                 </figure>
             </div>
@@ -214,12 +232,12 @@
                     </figcaption>
                     <a href="#">
                         <img class="rounded-lg scale-100 hover:scale-125 duration-700"
-                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/content-gallery-3.png"
+                            src="con3.jpg"
                             alt="image description">
                     </a>
                     <figcaption class="absolute px-4 text-lg text-white bottom-6">
-                        <p class="text-sm">24 November 2023</p>
-                        <p>Do you want to get notified when a new component is added to Flowbite?</p>
+                        <p class="text-sm">24 November 2022</p>
+                        <p>ACARA FORUM OPD DI INSPEKTORAT PROVSU TAHUN 2022</p>
                     </figcaption>
                 </figure>
             </div>
@@ -230,47 +248,16 @@
                     </figcaption>
                     <a href="#">
                         <img class="rounded-lg scale-100 hover:scale-125 duration-700"
-                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/content-gallery-3.png"
+                            src="con3.jpg"
                             alt="image description">
                     </a>
                     <figcaption class="absolute px-4 text-lg text-white bottom-6">
-                        <p class="text-sm">24 November 2023</p>
-                        <p>Do you want to get notified when a new component is added to Flowbite?</p>
+                        <p class="text-sm">24 November 2022</p>
+                        <p>UPACARA MEMPERINGATI HARI KEBANGKITAN NASIONAL TAHUN 2022</p>
                     </figcaption>
                 </figure>
             </div>
-            <div class=" ">
-                <figure class="relative max-w-sm transition-all duration-300 cursor-pointer filter  overflow-hidden">
-                    <figcaption class="absolute  z-50 top-3 left-3"><button
-                            class="bg-blue-500 px-2 py-1 rounded-lg text-sm text-white">Konferensi</button>
-                    </figcaption>
-                    <a href="#">
-                        <img class="rounded-lg scale-100 hover:scale-125 duration-700"
-                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/content-gallery-3.png"
-                            alt="image description">
-                    </a>
-                    <figcaption class="absolute px-4 text-lg text-white bottom-6">
-                        <p class="text-sm">24 November 2023</p>
-                        <p>Do you want to get notified when a new component is added to Flowbite?</p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class=" ">
-                <figure class="relative max-w-sm transition-all duration-300 cursor-pointer filter  overflow-hidden">
-                    <figcaption class="absolute  z-50 top-3 left-3"><button
-                            class="bg-blue-500 px-2 py-1 rounded-lg text-sm text-white">Konferensi</button>
-                    </figcaption>
-                    <a href="#">
-                        <img class="rounded-lg scale-100 hover:scale-125 duration-700"
-                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/content-gallery-3.png"
-                            alt="image description">
-                    </a>
-                    <figcaption class="absolute px-4 text-lg text-white bottom-6">
-                        <p class="text-sm">24 November 2023</p>
-                        <p>Do you want to get notified when a new component is added to Flowbite?</p>
-                    </figcaption>
-                </figure>
-            </div>
+        
 
 
         </div>
@@ -288,7 +275,7 @@
                 <div class="flip-box-inner">
                     <div class="flip-box-front">
                         <img class="h-auto max-w-full rounded-lg"
-                            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
+                            src="fot1.jpg" alt="">
                     </div>
                     <div class="flip-box-back">
                         <h2>Paris</h2>
@@ -296,35 +283,50 @@
                     </div>
                 </div>
             </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <img class="h-auto max-w-full rounded-lg"
+                            src="fot1.jpg" alt="">
+                    </div>
+                    <div class="flip-box-back">
+                        <h2>Paris</h2>
+                        <p>What an amazing city</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <img class="h-auto max-w-full rounded-lg"
+                            src="fot1.jpg" alt="">
+                    </div>
+                    <div class="flip-box-back">
+                        <h2>Paris</h2>
+                        <p>What an amazing city</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <img class="h-auto max-w-full rounded-lg"
+                            src="fot1.jpg" alt="">
+                    </div>
+                    <div class="flip-box-back">
+                        <h2>Paris</h2>
+                        <p>What an amazing city</p>
+                    </div>
+                </div>
+            </div>
+         
+       
+      
 
-            <div>
-                <img class="h-auto max-w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
+            <div class="max-w-full  h-52">
+         
             </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
-            </div>
+        
         </div>
 
     </div>

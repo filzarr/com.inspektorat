@@ -190,32 +190,36 @@
             <h1 class="text-4xl uppercase font-bold text-[#063A69]">Daftar Informasi</h1>
         </div>
 
-        <h2 class="mt-10">
-            <button type="button"
-                class="flex items-center justify-between w-full p-5 font-medium text-left bg-[#063A69] text-gray-100 border border-gray-400 ">
-                <span class="text-xl ">Informasi Berkala</span>
-                <svg class="w-3 h-3  dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                    fill="none" viewBox="0 0 8 14">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1" />
-                </svg>
-            </button>
-        </h2>
+        <a href="/forminformasi">
+            <h2 class="mt-10">
+                <button type="button"
+                    class="flex items-center justify-between w-full p-5 font-medium text-left bg-[#063A69] text-gray-100 border border-gray-400 ">
+                    <span class="text-xl ">Informasi Berkala</span>
+                    <svg class="w-3 h-3  dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 8 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1" />
+                    </svg>
+                </button>
+            </h2>
+        </a>
 
-        <h2 class="mt-1" id="accordion-arrow-icon-heading-3 mt-10">
-            <button type="button"
-                class="flex items-center justify-between w-full p-5 font-medium text-left bg-[#063A69] text-gray-100 border border-gray-400 ">
-                <span class="text-xl ">Informasi Publik</span>
-                {{-- <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1"/>
-                      </svg> --}}
-                <svg class="w-3 h-3  dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                    fill="none" viewBox="0 0 8 14">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1" />
-                </svg>
-            </button>
-        </h2>
+        <a href="/formkeberatan">
+            <h2 class="mt-1" id="accordion-arrow-icon-heading-3 mt-10">
+                <button type="button"
+                    class="flex items-center justify-between w-full p-5 font-medium text-left bg-[#063A69] text-gray-100 border border-gray-400 ">
+                    <span class="text-xl ">Informasi Publik</span>
+                    {{-- <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1"/>
+                          </svg> --}}
+                    <svg class="w-3 h-3  dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 8 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1" />
+                    </svg>
+                </button>
+            </h2>
+        </a>
 
 
     </div>
@@ -271,7 +275,7 @@
         </div>
         <div class="flex justify-center mt-20">
 
-            <div class="grid grid-cols-3 gap-10 text-center">
+            <div class="grid grid-cols-4 gap-10 text-center">
                 <div class="">
                     <div class="flex justify-center mb-5">
                         <svg class="w-[80px] h-[80px] text-blue-500 dark:text-white" aria-hidden="true"
@@ -304,6 +308,14 @@
                     </div>
                     <p class="text-lg font-semibold ">Cek Secara Berkala Pada Link Cek <span
                             class="underline text-[#063A69]">Pelaporan Informasi</span></p>
+                </div>
+                <div class="">
+                    <div class="flex justify-center mb-5">
+                        <svg class="w-[80px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 18">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5 5h9M5 9h5m8-8H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h4l3.5 4 3.5-4h5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1Z"/>
+                          </svg>
+                    </div>
+                    <p class="text-lg font-semibold ">Jika Anda Kurang Puas Anda Dapat Melaporkannya Pada Komisi Informasi</span></p>
                 </div>
             </div>
 

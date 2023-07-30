@@ -29,6 +29,7 @@
 
         .flip-box-inner {
             position: relative;
+         
             width: 100%;
             height: 100%;
             text-align: center;
@@ -43,6 +44,7 @@
         .flip-box-front,
         .flip-box-back {
             position: absolute;
+            z-index: 1000;
             width: 100%;
             height: 100%;
             -webkit-backface-visibility: hidden;
@@ -50,7 +52,6 @@
         }
 
         .flip-box-front {
-            background-color: #bbb;
             color: black;
         }
 

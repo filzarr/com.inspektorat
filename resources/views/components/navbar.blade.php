@@ -50,7 +50,7 @@
             <ul
                 class="flex flex-col font-medium p-4 md:p-0 mt-4 border  md:flex-row md:space-x-8 md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
-                    <a href="#" class="block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent t"
+                    <a href="/" class="block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent t"
                         aria-current="page">Home</a>
                 </li>
                 <li>
