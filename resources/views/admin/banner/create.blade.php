@@ -4,12 +4,13 @@
     <section class="bg-white dark:bg-gray-900 mt-5 ">
         <div class="max-w-2xl  py-10 mx-auto lg:py-16">
             <h2 class="mb-4 text-3xl  font-bold text-gray-900 dark:text-white text-center">Tambah Banner</h2>
-            <form action="#">
+            <form action="/admin/banner" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">
                     <div class="sm:col-span-2">
                         <label for="name" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Judul
                             Banner</label>
-                        <input type="text" name="name" id="name"
+                        <input type="text" name="judul" id="name"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             placeholder="Masukkan Judul Berita...">
                     </div>
@@ -22,13 +23,14 @@
                                     d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                             </svg>
                         </div>
-                        <input datepicker datepicker-autohide type="text"
+                        <input datepicker datepicker-autohide type="text" name="created_at"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Pilih Tanggal">
                     </div>
                     <div class="sm:col-span-2">
                         <label for="description"
                             class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Deskripsi</label>
+                            <input type="hidden" id="description" name="deskripsi">
                             <trix-editor input="description"></trix-editor>
                     </div>
                     <div class="">
@@ -36,7 +38,7 @@
                         <label class="block mb-2 text-lg font-medium text-gray-900 dark:text-white" for="file_input">Masukkan Foto</label>
                         <input
                             class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                            aria-describedby="file_input_help" id="file_input" type="file">
+                            aria-describedby="file_input_help" id="file_input" type="file" name="image">
                         <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF
                             (MAX. 800x400px).</p>
 

@@ -1,19 +1,30 @@
 @extends('layout.main')
 @section('content')
+    <style>
+        #gam {
+            display: block;
+            max-width: 13rem !important;
+            max-height: 10rem !important;
+            width: auto;
+            height: auto;
+        }
+    </style>
     <div id="default-carousel" class="relative w-full " data-carousel="slide">
         <!-- Carousel wrapper -->
         <div class="relative h-56 overflow-hidden  md:h-[35rem]">
             <!-- Item 1 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="slide1.jpg"
-                    class=" brightness-50  absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                    alt="...">
-                <div class="absolute left-56 top-56">
-                    <p class=" text-white  text-3xl block font-semibold w-[30rem]">Channel Layanan Pengaduan Masyarakat
-                        Terkait Pembangunan Sumatera Utara</p>
-                    <button class=" bg-cyan-700 p-2 mt-3 font-medium rounded-md text-white text-lg">Selengkapnya</button>
+            @foreach ($banner as $item)
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="/images/{{ $item->image }}"
+                        class=" brightness-50  absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                        alt="...">
+                    <div class="absolute left-56 top-56">
+                        <p class=" text-white  text-3xl block font-semibold w-[30rem]">{{ $item->judul }}</p>
+                        <button
+                            class=" bg-cyan-700 p-2 mt-3 font-medium rounded-md text-white text-lg">Selengkapnya</button>
+                    </div>
                 </div>
-            </div>
+            @endforeach
             <!-- Item 2 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                 <img src="slide1.jpg"
@@ -25,39 +36,7 @@
                     <button class=" bg-cyan-700 p-2 mt-3 font-medium rounded-md text-white text-lg">Selengkapnya</button>
                 </div>
             </div>
-            <!-- Item 3 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="slide1.jpg"
-                    class=" brightness-50  absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                    alt="...">
-                <div class="absolute left-56 top-56">
-                    <p class=" shadow-lg text-white  text-3xl block font-semibold w-[30rem]">Channel Layanan Pengaduan
-                        Masyarakat Terkait Pembangunan Sumatera Utara</p>
-                    <button class=" bg-cyan-700 p-2 mt-3 font-medium rounded-md text-white text-lg">Selengkapnya</button>
-                </div>
-            </div>
-            <!-- Item 4 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="slide1.jpg"
-                    class=" brightness-50  absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                    alt="...">
-                <div class="absolute left-56 top-56">
-                    <p class=" shadow-lg text-white  text-3xl block font-semibold w-[30rem]">Channel Layanan Pengaduan
-                        Masyarakat Terkait Pembangunan Sumatera Utara</p>
-                    <button class=" bg-cyan-700 p-2 mt-3 font-medium rounded-md text-white text-lg">Selengkapnya</button>
-                </div>
-            </div>
-            <!-- Item 5 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="slide1.jpg"
-                    class=" brightness-50  absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                    alt="...">
-                <div class="absolute left-56 top-56">
-                    <p class=" shadow-lg text-white  text-3xl block font-semibold w-[30rem]">Channel Layanan Pengaduan
-                        Masyarakat Terkait Pembangunan Sumatera Utara</p>
-                    <button class=" bg-cyan-700 p-2 mt-3 font-medium rounded-md text-white text-lg">Selengkapnya</button>
-                </div>
-            </div>
+
         </div>
         <!-- Slider indicators -->
         <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
@@ -106,26 +85,37 @@
                     <p class=" text-4xl uppercase font-bold text-[#3E6E8B]">Berita Terkini</p>
                 </div>
                 <div class="grid grid-rows-6 mt-20 gap-10">
-                    <div class="flex gap-10">
-                        <img src="tes.jpg" class="  w-52 h-40 rounded-xl drop-shadow-2xl border border-black/10"
-                            alt="">
-                        <div class=" grid justify-stretch">
-                            <p class="text-[#3E6E8B] text-lg font-bold">UPACARA HARI LAHIR PANCASILA 2023 ITPROVSU</p>
-                            <p class=" text-sm font-bold text-black/80">15 Juni 2023 Posted By Admin </p>
-                            <p class=" capitalize text-xs font-semibold break-words text-black/70">Medan (01/06),
-                                Pelaksanaan Upacara Bendera dalam rangka memperingati Hari Lahir Pancasila Tahun 2023
-                                Inspektorat Provinsi Sumatera Utara pada Hari Kamis (01/06/2023) </p>
+                    @foreach ($berita as $item)
+                        <div class="flex gap-10">
+                            <a href="/berita/{{ $item->slug }}">
+                                <img src="/images/{{ $item->image }}" id="gam"
+                                    class="  w-52 h-40 rounded-xl drop-shadow-2xl border border-black/10"
+                                    style="width: 13rem; height: 10rem" alt="">
+                            </a>
+                            <div class=" grid justify-stretch">
+                                <a href="/berita/{{ $item->slug }}">
+                                    <p class="text-[#3E6E8B] text-lg font-bold">{{ $item->judul }}</p>
+                                </a>
+                                <p class=" text-sm font-bold text-black/80">
+                                    {{ \Carbon\Carbon::parse($item->created_at)->format('d M Y') }} </p>
+                                <p class=" text-xs font-bold text-black/80">Posted By Admin </p>
+                                <div class=" capitalize text-xs  font-semibold  text-black/70 ">
+                                    {!! Illuminate\Support\Str::limit(strip_tags($item->deskripsi), $limit = 100, $end = '...') !!} </div>
+                            </div>
                         </div>
-                    </div>
+                    @endforeach
+
 
                 </div>
                 <a href="/berita">
                     <div class="flex justify-start">
-                        <p class=" font-semibold text-[#3E6E8B] text-xl hover:underline duration-500  translate-x-0 hover:translate-x-1 ease-out ">Lihat Berita Lainnya</p>
+                        <p
+                            class=" font-semibold text-[#3E6E8B] text-xl hover:underline duration-500  translate-x-0 hover:translate-x-1 ease-out ">
+                            Lihat Berita Lainnya</p>
                     </div>
                 </a>
             </div>
-            <div class="w-2/6 px-10">
+            <div class="w-2/6 px-10 block">
                 <div class="w-full   border-2 border-black/5 bg-[#EFEFF0] px-5 py-3 rounded-md">
                     <div class="w-full bg-[#214E6D] flex justify-center py-3 font-bold text-[#EFEFF0]">Inpektur
                         Inspektorat Sumatera Utara</div>
@@ -133,9 +123,10 @@
                     <div class="mt-10 w-full bg-[#214E6D] flex justify-center py-3 font-bold text-[#EFEFF0]">Link
                         Terkait</div>
                     <div class="grid grid-cols-3 gap-10 mt-5">
-                        <img src="link1.png" alt="" class="  border-4 border-black/10 shadow-md">
-                        <img src="link2.jpeg" alt="" class=" border-4 border-black/10 shadow-md">
-                        <img src="link3.jpeg" alt="" class=" border-4 border-black/10 shadow-md">
+                        @foreach ($link as $item)
+                            <a href="{{ $item->link }}" target="_blank"><img src="/images/{{ $item->image }}"
+                                    alt="" class="  border-4 border-black/10 shadow-md"></a>
+                        @endforeach
                     </div>
                     <div class="mt-10 w-full bg-[#214E6D] flex justify-center py-3 font-bold text-[#EFEFF0]">Statistik
                         Pengunjung</div>
@@ -193,71 +184,25 @@
             </ul>
         </div>
         <div class="grid grid-cols-3 mt-10 gap-10">
-            <div class=" ">
-                <figure class="relative max-w-sm transition-all duration-300 cursor-pointer filter  overflow-hidden">
-                    <figcaption class="absolute  z-50 top-3 left-3"><button
-                            class="bg-blue-500 px-2 py-1 rounded-lg text-sm text-white">Selesai</button>
-                    </figcaption>
-                    <a href="#">
-                        <img class="rounded-lg scale-100 hover:scale-125 duration-700"
-                            src="con1.jpg"
-                            alt="image description">
-                    </a>
-                    <figcaption class="absolute px-4 text-lg text-white bottom-6">
-                        <p class="text-sm">29 MEI 2023</p>
-                        <p>APEL PAGI SENIN </p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class=" ">
-                <figure class="relative max-w-sm transition-all duration-300 cursor-pointer filter  overflow-hidden">
-                    <figcaption class="absolute  z-50 top-3 left-3"><button
-                            class="bg-blue-500 px-2 py-1 rounded-lg text-sm text-white">Selesai</button>
-                    </figcaption>
-                    <a href="#">
-                        <img class="rounded-lg scale-100 hover:scale-125 duration-700"
-                            src="con2.jpg"
-                            alt="image description">
-                    </a>
-                    <figcaption class="absolute px-4 text-lg text-white bottom-6">
-                        <p class="text-sm">24 November 2023</p>
-                        <p>RAPAT KOORDINASI SINKRONISASI PROGRAM KAWASAN STRATEGIS PARIWISATA NASIONAL</p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class=" ">
-                <figure class="relative max-w-sm transition-all duration-300 cursor-pointer filter  overflow-hidden">
-                    <figcaption class="absolute  z-50 top-3 left-3"><button
-                            class="bg-blue-500 px-2 py-1 rounded-lg text-sm text-white">Konferensi</button>
-                    </figcaption>
-                    <a href="#">
-                        <img class="rounded-lg scale-100 hover:scale-125 duration-700"
-                            src="con3.jpg"
-                            alt="image description">
-                    </a>
-                    <figcaption class="absolute px-4 text-lg text-white bottom-6">
-                        <p class="text-sm">24 November 2022</p>
-                        <p>ACARA FORUM OPD DI INSPEKTORAT PROVSU TAHUN 2022</p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class=" ">
-                <figure class="relative max-w-sm transition-all duration-300 cursor-pointer filter  overflow-hidden">
-                    <figcaption class="absolute  z-50 top-3 left-3"><button
-                            class="bg-blue-500 px-2 py-1 rounded-lg text-sm text-white">Konferensi</button>
-                    </figcaption>
-                    <a href="#">
-                        <img class="rounded-lg scale-100 hover:scale-125 duration-700"
-                            src="con3.jpg"
-                            alt="image description">
-                    </a>
-                    <figcaption class="absolute px-4 text-lg text-white bottom-6">
-                        <p class="text-sm">24 November 2022</p>
-                        <p>UPACARA MEMPERINGATI HARI KEBANGKITAN NASIONAL TAHUN 2022</p>
-                    </figcaption>
-                </figure>
-            </div>
-        
+            @foreach ($agenda as $item)
+                <div class=" ">
+                    <figure class="relative max-w-sm transition-all duration-300 cursor-pointer filter  overflow-hidden">
+                        <figcaption class="absolute  z-50 top-3 left-3"><button
+                                class="bg-blue-500 px-2 py-1 rounded-lg text-sm text-white">Selesai</button>
+                        </figcaption>
+                        <a href="#">
+                            <img class="rounded-lg scale-100 hover:scale-125 duration-700"
+                                src="/images/{{ $item->image }}" alt="image description">
+                        </a>
+                        <figcaption class="absolute px-4 text-lg text-white bottom-6">
+                            <p class="text-sm"> {{ \Carbon\Carbon::parse($item->created_at)->format('d M Y') }}</p>
+                            <p>{{ $item->judul }} </p>
+                        </figcaption>
+                    </figure>
+                </div>
+            @endforeach
+
+
 
 
         </div>
@@ -271,62 +216,27 @@
         </div>
 
         <div class="grid grid-cols-5 gap-2 mt-10">
-            <div class="flip-box">
-                <div class="flip-box-inner">
-                    <div class="flip-box-front">
-                        <img class="h-auto max-w-full rounded-lg"
-                            src="fot1.jpg" alt="">
-                    </div>
-                    <div class="flip-box-back">
-                        <h2>Paris</h2>
-                        <p>What an amazing city</p>
-                    </div>
-                </div>
-            </div>
-            <div class="flip-box">
-                <div class="flip-box-inner">
-                    <div class="flip-box-front">
-                        <img class="h-auto max-w-full rounded-lg"
-                            src="fot1.jpg" alt="">
-                    </div>
-                    <div class="flip-box-back">
-                        <h2>Paris</h2>
-                        <p>What an amazing city</p>
+            @foreach ($galerifoto as $item)
+                <div class="flip-box">
+                    <div class="flip-box-inner">
+                        <div class="flip-box-front">
+                            <img class="h-auto max-w-full rounded-lg" src="/images/{{ $item->image }}" alt="">
+                        </div>
+                        <div class="flip-box-back">
+                            <h2>{{ $item->deskripsi }}</h2>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="flip-box">
-                <div class="flip-box-inner">
-                    <div class="flip-box-front">
-                        <img class="h-auto max-w-full rounded-lg"
-                            src="fot1.jpg" alt="">
-                    </div>
-                    <div class="flip-box-back">
-                        <h2>Paris</h2>
-                        <p>What an amazing city</p>
-                    </div>
-                </div>
-            </div>
-            <div class="flip-box">
-                <div class="flip-box-inner">
-                    <div class="flip-box-front">
-                        <img class="h-auto max-w-full rounded-lg"
-                            src="fot1.jpg" alt="">
-                    </div>
-                    <div class="flip-box-back">
-                        <h2>Paris</h2>
-                        <p>What an amazing city</p>
-                    </div>
-                </div>
-            </div>
-         
-       
-      
+            @endforeach
+
+
+
+
 
             <div class="max-w-full  h-52">
-         
+
             </div>
-        
+
         </div>
 
     </div>
@@ -383,30 +293,13 @@
                 aria-labelledby="stats-tab">
                 <dl
                     class="grid max-w-screen-xl grid-cols-2 gap-8  mx-auto text-center text-gray-900 sm:grid-cols-3 xl:grid-cols-6 dark:text-white sm:p-8">
-                    <div class="flex flex-col items-center justify-center">
-                        <dt class="mb-2 text-3xl font-extrabold">73M+</dt>
-                        <dd class="text-gray-500 dark:text-gray-400">Developers</dd>
-                    </div>
-                    <div class="flex flex-col items-center justify-center">
-                        <dt class="mb-2 text-3xl font-extrabold">100M+</dt>
-                        <dd class="text-gray-500 dark:text-gray-400">Public repositories</dd>
-                    </div>
-                    <div class="flex flex-col items-center justify-center">
-                        <dt class="mb-2 text-3xl font-extrabold">1000s</dt>
-                        <dd class="text-gray-500 dark:text-gray-400">Open source projects</dd>
-                    </div>
-                    <div class="flex flex-col items-center justify-center">
-                        <dt class="mb-2 text-3xl font-extrabold">1B+</dt>
-                        <dd class="text-gray-500 dark:text-gray-400">Contributors</dd>
-                    </div>
-                    <div class="flex flex-col items-center justify-center">
-                        <dt class="mb-2 text-3xl font-extrabold text-center">90</dt>
-                        <dd class="text-gray-500 dark:text-gray-400">Top Forbes companies</dd>
-                    </div>
-                    <div class="flex flex-col items-center justify-center">
-                        <dt class="mb-2 text-3xl font-extrabold">4M+</dt>
-                        <dd class="text-gray-500 dark:text-gray-400">Organizations</dd>
-                    </div>
+                    @foreach ($datapegawai as $item)
+                        <div class="flex flex-col items-center justify-center">
+                            <dt class="mb-2 text-3xl font-extrabold">{{ $item->jumlah }}</dt>
+                            <dd class="text-gray-500 dark:text-gray-400">{{ $item->nama }}</dd>
+                        </div>
+                    @endforeach
+
                 </dl>
             </div>
         </div>

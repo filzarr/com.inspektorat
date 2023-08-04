@@ -61,7 +61,7 @@
                 </table>
             </div>
     
-            <a href="/admin/irban1/agenda">
+            <a href="/admin/irban/irban1/agenda">
                 <h2 class="mt-10" id="accordion-arrow-icon-heading-3 mt-10">
                     <button type="button"
                         class="flex items-center justify-between w-full p-5 font-medium text-left bg-[#063A69] text-gray-100 border border-gray-400 ">
@@ -77,7 +77,7 @@
                     </button>
                 </h2>
             </a>
-            <a href="/admin/irban1/capaiankinerja">
+            <a href="/admin/irban/irban1/capaiankinerja">
                 <h2 class="mt-1" id="accordion-arrow-icon-heading-3 mt-10">
                     <button type="button"
                         class="flex items-center justify-between w-full p-5 font-medium text-left bg-[#063A69] text-gray-100 border border-gray-400 ">

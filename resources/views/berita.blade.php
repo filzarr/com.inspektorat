@@ -28,17 +28,21 @@
                     <p class=" text-4xl uppercase font-bold text-[#3E6E8B]">Berita Terkini</p>
                 </div>
                 <div class="grid grid-rows-6  gap-10">
+                    @foreach ($berita as $item)
+                        
                     <div class="flex gap-10">
-                        <img src="tes.jpg" class="  w-52 h-40 rounded-xl drop-shadow-2xl border border-black/10"
+                        <img src="/images/{{$item->image}}" class="  w-52 h-40 rounded-xl drop-shadow-2xl border border-black/10"
                             alt="">
                         <div class=" grid justify-stretch">
-                            <p class="text-[#3E6E8B] text-lg font-bold">UPACARA HARI LAHIR PANCASILA 2023 ITPROVSU</p>
-                            <p class=" text-sm font-bold text-black/80">15 Juni 2023 Posted By Admin </p>
+                            <p class="text-[#3E6E8B] text-lg font-bold">{{$item->judul}}</p>
+                            <p class=" text-sm font-bold text-black/80">15 Juni 2023</p>
+                            <p class=" text-xs font-bold text-black/80">Posted By Admin </p>
                             <p class=" capitalize text-xs font-semibold break-words text-black/70">Medan (01/06),
                                 Pelaksanaan Upacara Bendera dalam rangka memperingati Hari Lahir Pancasila Tahun 2023
                                 Inspektorat Provinsi Sumatera Utara pada Hari Kamis (01/06/2023) </p>
                         </div>
                     </div>
+                    @endforeach
                     <div class="flex gap-10">
                         <img src="tes.jpg" class="  w-52 h-40 rounded-xl drop-shadow-2xl border border-black/10"
                             alt="">

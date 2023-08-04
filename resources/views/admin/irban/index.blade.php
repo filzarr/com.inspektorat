@@ -8,7 +8,7 @@
                     <h1 class="text-4xl uppercase font-bold text-[#063A69]">Daftar Irban</h1>
                 </div>
         
-                <a href="/admin/irban1">
+                <a href="/admin/irban/irban1">
                     <h2 class="mt-10">
                         <button type="button"
                             class="flex items-center justify-between w-full p-5 font-medium text-left bg-[#063A69] text-gray-100 border border-gray-400 ">
@@ -22,7 +22,7 @@
                     </h2>
                 </a>
         
-                <a href="/admin/irban2">
+                <a href="/admin/irban/irban2">
                     <h2 class="mt-1" id="accordion-arrow-icon-heading-3 mt-10">
                         <button type="button"
                             class="flex items-center justify-between w-full p-5 font-medium text-left bg-[#063A69] text-gray-100 border border-gray-400 ">
@@ -38,7 +38,7 @@
                         </button>
                     </h2>
                 </a>
-                <a href="/admin/irban3">
+                <a href="/admin/irban/irban3">
                     <h2 class="mt-1" id="accordion-arrow-icon-heading-3 mt-10">
                         <button type="button"
                             class="flex items-center justify-between w-full p-5 font-medium text-left bg-[#063A69] text-gray-100 border border-gray-400 ">
@@ -54,7 +54,7 @@
                         </button>
                     </h2>
                 </a>
-                <a href="/admin/irban4">
+                <a href="/admin/irban/irban4">
                     <h2 class="mt-1" id="accordion-arrow-icon-heading-3 mt-10">
                         <button type="button"
                             class="flex items-center justify-between w-full p-5 font-medium text-left bg-[#063A69] text-gray-100 border border-gray-400 ">
@@ -70,7 +70,7 @@
                         </button>
                     </h2>
                 </a>
-                <a href="/admin/irbansus">
+                <a href="/admin/irban/irbansus">
                     <h2 class="mt-1" id="accordion-arrow-icon-heading-3 mt-10">
                         <button type="button"
                             class="flex items-center justify-between w-full p-5 font-medium text-left bg-[#063A69] text-gray-100 border border-gray-400 ">
