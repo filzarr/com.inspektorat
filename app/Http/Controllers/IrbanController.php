@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Irban;
+use Redirect;
+Use Alert;
 class IrbanController extends Controller
 {
     public function agenda(){
@@ -13,13 +15,14 @@ class IrbanController extends Controller
         return view('admin.irban.irban1.capaian');
     }
   public function irban(){
-    
+   
     return view('admin.irban.index');
   }
     public function index($irban)
     {
-
-        return view('admin.irban.irban1.index',compact('irban'));
+        $data = Irban::where('irban', $irban)->get();
+        // dd($data);
+        return view('admin.irban.irban1.index', compact('data', 'irban'));
     }
 
     /**
@@ -49,17 +52,38 @@ class IrbanController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Request $request)
     {
-        //
+        $data = Irban::where('jenis', $request->jenis)->where('irban', $request->irban)->first();
+        $irban = $request->irban;
+        $jenis = $request->jenis;
+        // dd($data);
+        return view('admin.irban.editampilan', compact('data','irban','jenis'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        if ($image = $request->file('image')) {
+            $input = [
+                'image' => $request->image,
+            ];
+            $destinationPath = 'images/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+            Irban::where('jenis', $request->jenis)->where('irban',$request->irban)->update($input);
+        }
+        else{
+            $input = [
+                'deskripsi' => $request->deskripsi,
+            ];
+            Irban::where('jenis', $request->jenis)->where('irban',$request->irban)->update($input);
+        }
+        Alert::success('Berhasil', 'Berhasil Mengupdate Berita');
+        return redirect()->route('irban', ['irban' => $request->irban]);
     }
 
     /**

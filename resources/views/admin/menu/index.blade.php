@@ -10,15 +10,17 @@
                 </div>
                 <div
                     class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
-                    <button type="button"
-                        class="flex items-center justify-center text-white bg-[#214E6D] hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
-                        <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewbox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path clip-rule="evenodd" fill-rule="evenodd"
-                                d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
-                        </svg>
-                        Tambah Menu
-                    </button>
+                    <a href="/admin/menu/create">
+                        <button type="button"
+                            class="flex items-center justify-center text-white bg-[#214E6D] hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
+                            <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewbox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path clip-rule="evenodd" fill-rule="evenodd"
+                                    d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
+                            </svg>
+                            Tambah Menu
+                        </button>
+                    </a>
 
                 </div>
             </div>
@@ -37,11 +39,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($menu as $item)
+                            
                         <tr class="border-b dark:border-gray-700">
                             <th scope="row"
-                                class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">KEGIATAN
-                                PKS AUDIT KINERJA ITPROVSU</th>
-                            <td class="px-4 py-3"><a href="https://flowbite.com/" target="_blank">www.google.com</a></td>
+                                class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$item->judul}}</th>
+                            <td class="px-4 py-3"><a href="{{$item->link}}" target="_blank">{{$item->link}}</a></td>
                             <td class="px-4 py-3">100</td>
                             <td class="px-4 py-3">4</td>
                             <td class="px-4 py-3">10 November 2023</td>
@@ -64,17 +67,18 @@
                                                 class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Tampil</a>
                                         </li>
                                         <li>
-                                            <a href="#"
+                                            <a href="/admin/menu/{{$item->id}}/edit"
                                                 class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
                                         </li>
                                     </ul>
                                     <div class="py-1">
-                                        <a href="#"
+                                        <a href="{{ route('menu.destroy', $item->id) }}" data-confirm-delete="true"
                                             class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Hapus</a>
                                     </div>
                                 </div>
                             </td>
                         </tr>
+                        @endforeach
 
                     </tbody>
                 </table>

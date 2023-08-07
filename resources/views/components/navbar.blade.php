@@ -54,7 +54,7 @@
                         aria-current="page">Home</a>
                 </li>
                 <li>
-                    <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+                    <button id="dropdownNavbarLink" data-dropdown-toggle="profile"
                         class="py-2 pl-3 pr-4 flex items-center justify-between w-full  text-white">Profile <svg
                             class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
@@ -63,18 +63,16 @@
                                 clip-rule="evenodd"></path>
                         </svg></button>
                     <!-- Dropdown menu -->
-                    <div id="dropdownNavbar"
+                    <div id="profile"
                         class="z-50 hidden font-normal bg-white divide-y divide-gray-100  shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                         <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                            @foreach ($profile as $item)
                             <li class="hover:bg-[#063A69]  hover:text-gray-200">
-                                <a href="#" class="block px-4 py-2  ">Regulasi</a>
+                                <a href="{{$item->link}}" target="_blank" class="block px-4 py-2  ">{{$item->judul}}</a>
                             </li>
-                            <li class="hover:bg-[#063A69]  hover:text-gray-200">
-                                <a href="#" class="block px-4 py-2 ">Capaian Kinerja</a>
-                            </li>
-                            <li class="hover:bg-[#063A69]  hover:text-gray-200">
-                                <a href="#" class="block px-4 py-2 ">Kepegawaian</a>
-                            </li>
+                       
+                            @endforeach
+                          
                         </ul>
 
                     </div>
@@ -93,20 +91,26 @@
                         class="z-50 hidden font-normal bg-white divide-y divide-gray-100  shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                         <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                             <li class="hover:bg-[#063A69]  hover:text-gray-200">
-                                <a href="/irban" class="block px-4 py-2  ">Irban 1</a>
+                                <a href="/irban1" class="block px-4 py-2  ">Irban 1</a>
                             </li>
                             <li class="hover:bg-[#063A69]  hover:text-gray-200">
-                                <a href="/irban" class="block px-4 py-2 ">Irban 2</a>
+                                <a href="/irban2" class="block px-4 py-2 ">Irban 2</a>
                             </li>
                             <li class="hover:bg-[#063A69]  hover:text-gray-200">
-                                <a href="/irban" class="block px-4 py-2 ">Irban 3</a>
+                                <a href="/irban3" class="block px-4 py-2 ">Irban 3</a>
+                            </li>
+                            <li class="hover:bg-[#063A69]  hover:text-gray-200">
+                                <a href="/irban4" class="block px-4 py-2 ">Irban 4</a>
+                            </li>
+                            <li class="hover:bg-[#063A69]  hover:text-gray-200">
+                                <a href="/irbansus" class="block px-4 py-2 ">Irbansus</a>
                             </li>
                         </ul>
 
                     </div>
                 </li>
                 <li>
-                    <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+                    <button id="dropdownNavbarLink" data-dropdown-toggle="regulasi"
                         class="py-2 pl-3 pr-4 flex items-center justify-between w-full  text-white">Regulasi <svg
                             class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
@@ -115,28 +119,20 @@
                                 clip-rule="evenodd"></path>
                         </svg></button>
                     <!-- Dropdown menu -->
-                    <div id="dropdownNavbar"
+                    <div id="regulasi"
                         class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                         <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
                             aria-labelledby="dropdownLargeButton">
+                            @foreach ($regulasi as $item)
                             <li>
-                                <a href="#"
-                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                                <a href="{{$item->link}}" target="_blank"
+                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{{$item->judul}}</a>
                             </li>
-                            <li>
-                                <a href="#"
-                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-                            </li>
+                            @endforeach
+                        
+                       
                         </ul>
-                        <div class="py-1">
-                            <a href="#"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Sign
-                                out</a>
-                        </div>
+                   
                     </div>
                 </li>
                 <li>
@@ -153,24 +149,16 @@
                         class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                         <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
                             aria-labelledby="dropdownLargeButton">
+                            @foreach ($pedoman as $item)
+                                
                             <li>
-                                <a href="#"
-                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                                <a href="{{$item->link}}" target="_blank"
+                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{{$item->judul}}</a>
                             </li>
-                            <li>
-                                <a href="#"
-                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-                            </li>
+                        
+                            @endforeach
                         </ul>
-                        <div class="py-1">
-                            <a href="#"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Sign
-                                out</a>
-                        </div>
+                  
                     </div>
                 </li>
 

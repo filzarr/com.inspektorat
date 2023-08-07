@@ -28,20 +28,8 @@
             </h2>
             <div id="accordion-arrow-icon-body-5" class="hidden" aria-labelledby="accordion-arrow-icon-heading-5">
                 <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components from
-                        Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another
-                        difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers
-                        sections of pages.</p>
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both Flowbite,
-                        Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the best
-                        of two worlds.</p>
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-                    <ul class="pl-5 text-gray-500 list-disc dark:text-gray-400">
-                        <li><a href="https://flowbite.com/pro/"
-                                class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
-                        <li><a href="https://tailwindui.com/" rel="nofollow"
-                                class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
-                    </ul>
+                    <div class="mb-2 text-gray-500 dark:text-gray-400">{!! $profile->deskripsi !!}</div>
+                 
                 </div>
             </div>
             <h2 id="accordion-arrow-icon-heading-3">
@@ -59,20 +47,8 @@
             </h2>
             <div id="accordion-arrow-icon-body-3" class="hidden" aria-labelledby="accordion-arrow-icon-heading-3">
                 <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components from
-                        Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another
-                        difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers
-                        sections of pages.</p>
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both Flowbite,
-                        Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the best
-                        of two worlds.</p>
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-                    <ul class="pl-5 text-gray-500 list-disc dark:text-gray-400">
-                        <li><a href="https://flowbite.com/pro/"
-                                class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
-                        <li><a href="https://tailwindui.com/" rel="nofollow"
-                                class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
-                    </ul>
+                    <div class="mb-2 text-gray-500 dark:text-gray-400">{!! $visi->deskripsi !!}</div>
+                 
                 </div>
             </div>
             <h2 id="accordion-arrow-icon-heading-4">
@@ -90,20 +66,8 @@
             </h2>
             <div id="accordion-arrow-icon-body-4" class="hidden" aria-labelledby="accordion-arrow-icon-heading-4">
                 <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components from
-                        Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another
-                        difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers
-                        sections of pages.</p>
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both Flowbite,
-                        Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the best
-                        of two worlds.</p>
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-                    <ul class="pl-5 text-gray-500 list-disc dark:text-gray-400">
-                        <li><a href="https://flowbite.com/pro/"
-                                class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
-                        <li><a href="https://tailwindui.com/" rel="nofollow"
-                                class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
-                    </ul>
+                    <div class="mb-2 text-gray-500 dark:text-gray-400">{!! $misi->deskripsi !!}</div>
+                 
                 </div>
             </div>
         </div>

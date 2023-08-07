@@ -190,7 +190,7 @@
             <h1 class="text-4xl uppercase font-bold text-[#063A69]">Daftar Informasi</h1>
         </div>
 
-        <a href="/forminformasi">
+        <a href="/informasi-berkala">
             <h2 class="mt-10">
                 <button type="button"
                     class="flex items-center justify-between w-full p-5 font-medium text-left bg-[#063A69] text-gray-100 border border-gray-400 ">
@@ -204,7 +204,7 @@
             </h2>
         </a>
 
-        <a href="/formkeberatan">
+        <a href="/informasi-publik">
             <h2 class="mt-1" id="accordion-arrow-icon-heading-3 mt-10">
                 <button type="button"
                     class="flex items-center justify-between w-full p-5 font-medium text-left bg-[#063A69] text-gray-100 border border-gray-400 ">
@@ -241,8 +241,10 @@
                                 d="M12 2h4a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h4m6 0v3H6V2m6 0a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1M5 5h8m-5 5h5m-8 0h.01M5 14h.01M8 14h5" />
                         </svg>
                     </div>
-                    <p class="text-lg font-semibold ">Membuat Permohonan pada <span class="underline text-[#063A69]"> link
-                            Permohonan </span></p>
+                    <p class="text-lg font-semibold ">Membuat Permohonan pada <a href="/forminformasi">
+                        <span class="underline text-[#063A69]"> link
+                                Permohonan </span>
+                    </a></p>
                 </div>
                 <div class="">
                     <div class="flex justify-center mb-5">
@@ -262,8 +264,8 @@
                                 stroke-width="1.3" d="M1 5.917 5.724 10.5 15 1.5" />
                         </svg>
                     </div>
-                    <p class="text-lg font-semibold ">Cek Secara Berkala Pada Link Cek <span
-                            class="underline text-[#063A69]">Permohonan Informasi</span></p>
+                    <p class="text-lg font-semibold ">Cek Secara Berkala Pada Link Cek <a href="/cek-laporan"
+                            class="underline text-[#063A69]">Permohonan Informasi</a></p>
                 </div>
             </div>
 
@@ -285,8 +287,10 @@
                                 d="M12 2h4a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h4m6 0v3H6V2m6 0a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1M5 5h8m-5 5h5m-8 0h.01M5 14h.01M8 14h5" />
                         </svg>
                     </div>
-                    <p class="text-lg font-semibold ">Membuat Laporan pada <span class="underline text-[#063A69]"> link
-                            Laporan Informasi </span></p>
+                    <p class="text-lg font-semibold ">Membuat Laporan pada <a href="/formkeberatan">
+                        <span class="underline text-[#063A69]"> link
+                                Laporan Informasi </span>
+                    </a></p>
                 </div>
                 <div class="">
                     <div class="flex justify-center mb-5">

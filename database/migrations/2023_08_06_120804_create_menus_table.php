@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('irbans', function (Blueprint $table) {
+        Schema::create('menus', function (Blueprint $table) {
             $table->id();
-            $table->enum('jenis', ['profile','visi','misi','struktur','banner']);
-            $table->text('deskripsi')->nullable();
-            $table->string('image')->nullable();
-            $table->enum('irban', ['irban1','irban2','irban3','irban4','irbansus']);
+            $table->string('judul');
+            $table->string('link');
+            $table->enum('gm', ['profile', 'regulasi', 'pedoman standar']);
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('irbans');
+        Schema::dropIfExists('menus');
     }
 };
