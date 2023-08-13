@@ -4,25 +4,37 @@
     <section class="bg-white dark:bg-gray-900 mt-5 ">
         <div class="max-w-2xl  py-10 mx-auto lg:py-16">
             <h2 class="mb-4 text-3xl  font-bold text-gray-900 dark:text-white text-center">Tambah Berita</h2>
-            <form action="#">
+            <form action="/admin/menu" method="post">
+                @csrf
                 <div class="grid gap-3 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">
                     <div class="sm:col-span-2">
                         <label for="name" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Judul
                             Menu</label>
-                        <input type="text" name="name" id="name"
+                        <input type="text" name="judul" id="name"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Masukkan Judul Berita...">
+                            placeholder="Masukkan Judul Menu...">
                     </div>
 
 
                     <div class="sm:col-span-2">
                         <label for="name" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Link
                             Drive</label>
-                        <input type="text" name="name" id="name"
+                        <input type="text" name="link" id="name"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Masukkan Judul Berita...">
+                            placeholder="Masukkan Link Drive...">
                     </div>
-                    <div class="flex items-center ">
+
+                    <div class="sm:col-span-2">
+                        <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pilih Menu</label>
+                        <select id="countries" name="gm"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="profile" selected>Profile</option>
+                            <option value="regulasi">Regulasi</option>
+                            <option value="pedoman standar">Pedoman Standar</option>
+                        </select>
+                    </div>
+
+                    {{-- <div class="flex items-center ">
                         <input checked id="checked-checkbox" type="checkbox" value=""
                             class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                         <label for="checked-checkbox"
@@ -87,7 +99,7 @@
                             </div>
                         </div>
 
-                    </div>
+                    </div> --}}
 
                 </div>
                 <div class="flex items-center space-x-4">

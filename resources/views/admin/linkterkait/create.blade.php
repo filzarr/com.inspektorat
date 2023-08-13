@@ -12,6 +12,9 @@
                         <input type="text" name="link" id="name"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             placeholder="Masukkan Link...">
+                            @error('link')
+                            <p class="mt-2 text-sm text-red-600 dark:text-red-500 capitalize"><span class="">*{{$message}}</p>
+                            @enderror
                     </div>
                    
                     <div class="">
@@ -22,6 +25,9 @@
                             aria-describedby="file_input_help" id="file_input" type="file" name="image">
                         <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF
                             (MAX. 800x400px).</p>
+                            @error('image')
+                            <p class="mt-2 text-sm text-red-600 dark:text-red-500 capitalize"><span class="">*{{$message}}</p>
+                            @enderror
 
                     </div>
                 </div>

@@ -38,6 +38,9 @@ class AgendaController extends Controller
             'deskripsi' => 'required',
             'created_at' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+        ],
+        [
+            'required' => ':attribute Belum Diisi.',
         ]);
         $input = $request->all();
         if ($image = $request->file('image')) {
@@ -64,7 +67,9 @@ class AgendaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $berita = Agenda::findOrFail($id);
+        return view('admin.agenda.edit', compact('berita'));
+  
     }
 
     /**
@@ -72,7 +77,23 @@ class AgendaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+       
+        $input = [
+            'judul' =>$request->judul,
+            'deskripsi' => $request->deskripsi,
+            'created_at' =>  \Carbon\Carbon::parse($request->created_at)->format('Y-m-d') ,
+          
+        ];
+        
+        if ($image = $request->file('image')) {
+            $destinationPath = 'images/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+        }
+        Agenda::where('id', $id)->update($input);
+        Alert::success('Berhasil', 'Berhasil Mengupdate Agenda');
+        return redirect('/admin/agenda');
     }
 
     /**
@@ -80,6 +101,11 @@ class AgendaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        
+        $agenda = Agenda::findOrFail($id);
+        unlink("images/".$agenda->image);
+        $agenda->delete();
+        Alert::success('Berhasil', 'Berhasil Menghapus agenda');
+        return redirect('/admin/agenda');
     }
 }

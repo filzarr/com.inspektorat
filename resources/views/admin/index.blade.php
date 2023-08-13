@@ -11,7 +11,7 @@
                 <p class=" text-sm font-medium text-gray-700">Pengunjung Bulan Ini</p>
             </div>
             <div class="flex justify-between items-center content-center place-content-center mt-5">
-                <p class=" text-4xl  font-bold text-gray-800">1000</p>
+                <p class=" text-4xl  font-bold text-gray-800">{{$bulan}}</p>
                 <div class="p-2 rounded-lg  flex gap-2 bg-green-400">
                     <svg class="w-5 h-5 text-gray-700 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         fill="none" viewBox="0 0 18 16">
@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="flex justify-between items-center content-center place-content-center mt-5">
-                <p class=" text-4xl  font-bold text-gray-800">1000</p>
+                <p class=" text-4xl  font-bold text-gray-800">{{$berita}}</p>
 
             </div>
         </div>
@@ -57,7 +57,7 @@
                 <p class=" text-sm font-medium text-gray-700">Laporan</p>
             </div>
             <div class="flex justify-between items-center content-center place-content-center mt-5">
-                <p class=" text-4xl  font-bold text-gray-800">1000</p>
+                <p class=" text-4xl  font-bold text-gray-800">{{$total1 + $total2}}</p>
                 <div class="p-2 rounded-lg  flex gap-2 bg-red-500">
                     <svg class="w-5 h-5 text-gray-700 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         fill="none" viewBox="0 0 18 16">
@@ -121,10 +121,13 @@
     </div>
 
     <script>
-        const xValues = ["", "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September",
-            "Oktober", "November", "Desember"
+        const xValues = [@foreach($statistik as $item)
+        "{{$item->month}}",
+        @endforeach
         ];
-        const yValues = [, 30, 50];
+        const yValues = [@foreach($statistik as $item)
+        "{{$item->data}}",
+        @endforeach];
 
         new Chart("myChart", {
             type: "line",
@@ -146,7 +149,7 @@
                     yAxes: [{
                         ticks: {
                             min: 0,
-                            max: 1000
+                            max: 10000
                         }
                     }],
                 }

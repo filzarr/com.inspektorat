@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('judul');
             $table->text('deskripsi');
+            $table->string('slug')->unique();
             $table->integer('views')->default(0);
             $table->string('image');
             $table->timestamps();

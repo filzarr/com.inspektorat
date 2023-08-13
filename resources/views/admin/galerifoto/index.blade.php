@@ -36,9 +36,11 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($data as $item)
+                                
                             <tr class="border-b dark:border-gray-700">
-                                <td class="px-4 py-3"><img src="/ber1.jpg" class="w-20 h-20" alt=""></td>
-                                <td class="px-4 py-3">Lorem ipsum dolor sit, amet consectetaksjdaksjdkajdkjajsk</td>
+                                <td class="px-4 py-3"><img src="/images/{{$item->image}}" class="w-20 h-20" alt=""></td>
+                                <td class="px-4 py-3">{{$item->deskripsi}}</td>
                                 <td class="px-4 py-3 flex items-center justify-end">
                                     <button id="apple-imac-27-dropdown-button" data-dropdown-toggle="apple-imac-27-dropdown"
                                         class="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-gray-400 dark:hover:text-gray-100"
@@ -63,12 +65,13 @@
                                             </li>
                                         </ul>
                                         <div class="py-1">
-                                            <a href="#"
+                                            <a href="{{ route('galerifoto.destroy', $item->id)}}" data-confirm-delete="true"
                                                 class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Hapus</a>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
+                            @endforeach
 
                         </tbody>
                     </table>

@@ -8,7 +8,8 @@
     <title>Laravel</title>
 
     <!-- Fonts -->
-
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
+    <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -22,14 +23,14 @@
 
         .flip-box {
             background-color: transparent;
-         
+
             border: 1px solid #f1f1f1;
             perspective: 1000px;
         }
 
         .flip-box-inner {
             position: relative;
-         
+
             width: 100%;
             height: 100%;
             text-align: center;
@@ -62,10 +63,12 @@
         }
     </style>
 </head>
+
 <body class="antialiased">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
-</body>
-    @include('components.navbar')
-    @yield('content')
+</body> @include('sweetalert::alert')
+<x-navbar></x-navbar>
+@yield('content')
 @include('components.footer')
+
 </html>

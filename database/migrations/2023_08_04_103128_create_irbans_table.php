@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('irbans', function (Blueprint $table) {
             $table->id();
-            $table->enum('jenis', ['profile','visi','misi','struktur']);
+            $table->enum('jenis', ['profile','visi','misi','struktur','banner']);
             $table->text('deskripsi')->nullable();
             $table->string('image')->nullable();
             $table->enum('irban', ['irban1','irban2','irban3','irban4','irbansus']);

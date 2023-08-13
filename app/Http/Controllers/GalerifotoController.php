@@ -8,12 +8,14 @@ use RealRashid\SweetAlert\Facades\Alert;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 class GalerifotoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        return view('admin.galerifoto.index');
+        $data = Galerifoto::paginate(15);
+        $title = 'Hapus Foto!';
+        $text = "Apakah Anda Yakin Ingin Menghapus Foto?";
+        confirmDelete($title, $text);
+     
+        return view('admin.galerifoto.index', compact('data'));
     }
 
     /**
@@ -58,7 +60,9 @@ class GalerifotoController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = Galerifoto::findOrFail($id);
+        return view('admin.galerifoto.edit', compact('data'));
+
     }
 
     /**
@@ -66,7 +70,19 @@ class GalerifotoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $input = [
+           'deskripsi' => $request->deskripsi,
+     
+        ];
+        if ($image = $request->file('image')) {
+            $destinationPath = 'images/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+        }
+        Galerifoto::where('id', $id)->update($input);
+        Alert::success('Berhasil', 'Berhasil Mengupdate Galeri Foto');
+        return redirect('/admin/galerifoto');
     }
 
     /**
@@ -74,6 +90,10 @@ class GalerifotoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data = Galerifoto::findOrFail($id);
+        unlink("images/".$data->image);
+        $data->delete();
+        Alert::success('Berhasil', 'Berhasil Menghapus Galeri Foto');
+        return redirect('/admin/galerifoto');
     }
 }

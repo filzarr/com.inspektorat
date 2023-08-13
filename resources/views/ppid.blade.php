@@ -12,8 +12,8 @@
     </section>
 
 
-    <div class="w-full px-28 mt-10">
-        <div class="grid grid-cols-3 justify-center gap-20 px-28 ">
+    <div class="w-full lg:px-28 mt-10">
+        <div class="grid lg:grid-cols-3 justify-center gap-20 px-14 lg:px-28 ">
 
             <div
                 class="w-full max-w-sm p-4 bg-white border border-gray-300 rounded-lg  drop-shadow-xl sm:p-8 dark:bg-gray-800 dark:border-gray-700">
@@ -69,7 +69,7 @@
 
         </div>
     </div>
-    <div class="w-full px-28 mt-20">
+    <div class="w-full px-14 lg:px-28 mt-20">
 
         <div id="accordion-flush" data-accordion="collapse"
             data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
@@ -89,12 +89,7 @@
             </h2>
             <div id="accordion-flush-body-1" class="hidden" aria-labelledby="accordion-flush-heading-1">
                 <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is an open-source library of interactive
-                        components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.</p>
-                    <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a
-                            href="/docs/getting-started/introduction/"
-                            class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing
-                        websites even faster with components on top of Tailwind CSS.</p>
+                    <div class="mb-2 text-gray-500 dark:text-gray-400">{{$profile->deskripsi}}</div>
                 </div>
             </div>
             <h2 id="accordion-flush-heading-8">
@@ -112,12 +107,7 @@
             </h2>
             <div id="accordion-flush-body-8" class="hidden" aria-labelledby="accordion-flush-heading-8">
                 <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is an open-source library of interactive
-                        components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.</p>
-                    <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a
-                            href="/docs/getting-started/introduction/"
-                            class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing
-                        websites even faster with components on top of Tailwind CSS.</p>
+                    <div class="mb-2 text-gray-500 dark:text-gray-400">{{$tugas->deskripsi}}.</div>
                 </div>
             </div>
             <h2 id="accordion-flush-heading-2">
@@ -135,12 +125,7 @@
             </h2>
             <div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
                 <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is first conceptualized and designed using
-                        the
-                        Figma software so everything you see in the library has a design equivalent in our Figma file.</p>
-                    <p class="text-gray-500 dark:text-gray-400">Check out the <a href="https://flowbite.com/figma/"
-                            class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a> based on the
-                        utility classes from Tailwind CSS and components from Flowbite.</p>
+                    <div class="mb-2 text-gray-500 dark:text-gray-400">{{$visi->deskripsi}}</div>
                 </div>
             </div>
             <h2 id="accordion-flush-heading-3">
@@ -158,26 +143,14 @@
             </h2>
             <div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-3">
                 <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components from
-                        Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another
-                        difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers
-                        sections of pages.</p>
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both Flowbite,
-                        Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the best
-                        of two worlds.</p>
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-                    <ul class="pl-5 text-gray-500 list-disc dark:text-gray-400">
-                        <li><a href="https://flowbite.com/pro/"
-                                class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
-                        <li><a href="https://tailwindui.com/" rel="nofollow"
-                                class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
-                    </ul>
+                    <p class="mb-2 text-gray-500 dark:text-gray-400">{{$misi->deskripsi}}</p>
+               
                 </div>
             </div>
         </div>
 
     </div>
-    <div class="w-full px-28 mt-20">
+    <div class="w-full px-14 lg:px-28 mt-20">
         <div class="flex justify-center text-center  font-semibold">
             <h1 class="text-4xl uppercase font-bold text-[#063A69]">Struktur</h1>
         </div>
@@ -185,16 +158,16 @@
             <img src="" class="w-full h-96" alt="">
         </div>
     </div>
-    <div class="w-full px-28 mt-20">
+    <div class="w-full px-14 lg:px-28 mt-20">
         <div class="flex justify-center text-center  font-semibold">
-            <h1 class="text-4xl uppercase font-bold text-[#063A69]">Daftar Informasi</h1>
+            <h1 class="text-2xl lg:text-4xl uppercase font-bold text-[#063A69]">Daftar Informasi</h1>
         </div>
 
-        <a href="/forminformasi">
+        <a href="/ppid/informasi-berkala">
             <h2 class="mt-10">
                 <button type="button"
-                    class="flex items-center justify-between w-full p-5 font-medium text-left bg-[#063A69] text-gray-100 border border-gray-400 ">
-                    <span class="text-xl ">Informasi Berkala</span>
+                    class="flex items-center justify-between w-full p-4 lg:p-5 font-medium text-left bg-[#063A69] text-gray-100 border border-gray-400 ">
+                    <span class="text-lg lg:text-xl ">Informasi Berkala</span>
                     <svg class="w-3 h-3  dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         fill="none" viewBox="0 0 8 14">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -204,11 +177,11 @@
             </h2>
         </a>
 
-        <a href="/formkeberatan">
+        <a href="/ppid/informasi-publik">
             <h2 class="mt-1" id="accordion-arrow-icon-heading-3 mt-10">
                 <button type="button"
-                    class="flex items-center justify-between w-full p-5 font-medium text-left bg-[#063A69] text-gray-100 border border-gray-400 ">
-                    <span class="text-xl ">Informasi Publik</span>
+                    class="flex items-center justify-between w-full p-4 lg:p-5 font-medium text-left bg-[#063A69] text-gray-100 border border-gray-400 ">
+                    <span class="text-lg lg:text-xl ">Informasi Publik</span>
                     {{-- <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1"/>
                           </svg> --}}
@@ -225,13 +198,13 @@
     </div>
 
     </div>
-    <div class="w-full px-28 mt-20">
+    <div class="w-full px-14 lg:px-28 mt-20">
         <div class="flex justify-center text-center  font-semibold">
-            <h1 class="text-4xl uppercase font-bold text-[#063A69]">Tata Cara Permohonan Informasi</h1>
+            <h1 class="text-2xl lg:text-4xl uppercase font-bold text-[#063A69]">Tata Cara Permohonan Informasi</h1>
         </div>
-        <div class="flex justify-center mt-20">
+        <div class="flex justify-center mt-10 lg:mt-20">
 
-            <div class="grid grid-cols-3 gap-10 text-center">
+            <div class="grid lg:grid-cols-3 gap-10 text-center">
                 <div class="">
                     <div class="flex justify-center mb-5">
                         <svg class="w-[80px] h-[80px] text-blue-500 dark:text-white" aria-hidden="true"
@@ -241,8 +214,10 @@
                                 d="M12 2h4a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h4m6 0v3H6V2m6 0a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1M5 5h8m-5 5h5m-8 0h.01M5 14h.01M8 14h5" />
                         </svg>
                     </div>
-                    <p class="text-lg font-semibold ">Membuat Permohonan pada <span class="underline text-[#063A69]"> link
-                            Permohonan </span></p>
+                    <p class="text-lg font-semibold ">Membuat Permohonan pada <a href="/forminformasi">
+                        <span class="underline text-[#063A69]"> link
+                                Permohonan </span>
+                    </a></p>
                 </div>
                 <div class="">
                     <div class="flex justify-center mb-5">
@@ -262,20 +237,20 @@
                                 stroke-width="1.3" d="M1 5.917 5.724 10.5 15 1.5" />
                         </svg>
                     </div>
-                    <p class="text-lg font-semibold ">Cek Secara Berkala Pada Link Cek <span
-                            class="underline text-[#063A69]">Permohonan Informasi</span></p>
+                    <p class="text-lg font-semibold ">Cek Secara Berkala Pada Link Cek <a href="/cek-laporan"
+                            class="underline text-[#063A69]">Permohonan Informasi</a></p>
                 </div>
             </div>
 
         </div>
     </div>
-    <div class="w-full px-28 mt-20">
+    <div class="w-full px-14 lg:px-28 mt-20">
         <div class="flex justify-center text-center  font-semibold">
-            <h1 class="text-4xl uppercase font-bold text-[#063A69]">Tata Cara Keberatan Informasi</h1>
+            <h1 class="text-2xl lg:text-4xl uppercase font-bold text-[#063A69]">Tata Cara Keberatan Informasi</h1>
         </div>
         <div class="flex justify-center mt-20">
 
-            <div class="grid grid-cols-4 gap-10 text-center">
+            <div class="grid lg:grid-cols-4 gap-10 text-center">
                 <div class="">
                     <div class="flex justify-center mb-5">
                         <svg class="w-[80px] h-[80px] text-blue-500 dark:text-white" aria-hidden="true"
@@ -285,8 +260,10 @@
                                 d="M12 2h4a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h4m6 0v3H6V2m6 0a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1M5 5h8m-5 5h5m-8 0h.01M5 14h.01M8 14h5" />
                         </svg>
                     </div>
-                    <p class="text-lg font-semibold ">Membuat Laporan pada <span class="underline text-[#063A69]"> link
-                            Laporan Informasi </span></p>
+                    <p class="text-lg font-semibold ">Membuat Laporan pada <a href="/formkeberatan">
+                        <span class="underline text-[#063A69]"> link
+                                Laporan Informasi </span>
+                    </a></p>
                 </div>
                 <div class="">
                     <div class="flex justify-center mb-5">
@@ -321,17 +298,17 @@
 
         </div>
     </div>
-    <div class="w-full mt-20 px-28 py-10 bg-[#EFEFF0]">
+    <div class="w-full mt-20 px-14 lg:px-28 py-10 bg-[#EFEFF0]">
         <div class="flex justify-center">
-            <p class="font-bold text-3xl text-[#3E6E8B] underline underline-offset-8">Statistik Informasi</p>
+            <p class="font-bold text-2xl lg:text-3xl text-[#3E6E8B] underline underline-offset-8">Statistik Informasi</p>
         </div>
-        <div id="fullWidthTabContent" class="border-t  dark:border-gray-600">
+        <div id="fullWidthTabContent" class="border-t max-md:mt-10  dark:border-gray-600">
             <div class="   rounded-lg md:p-8 dark:bg-gray-800" id="stats" role="tabpanel"
                 aria-labelledby="stats-tab">
                 <dl
                     class="grid max-w-screen-xl grid-cols-2 gap-8  mx-auto text-center text-gray-900 sm:grid-cols-3 xl:grid-cols-6 dark:text-white sm:p-8">
                     <div class="flex flex-col items-center justify-center">
-                        <dt class="mb-2 text-3xl font-extrabold">100</dt>
+                        <dt class="mb-2 text-3xl font-extrabold">{{$informasi}}</dt>
                         <dd class="text-gray-500 dark:text-gray-400">Daftar Informasi</dd>
                     </div>
                     <div class="flex flex-col items-center justify-center">
@@ -339,19 +316,19 @@
                         <dd class="text-gray-500 dark:text-gray-400">Jumlah Unduh</dd>
                     </div>
                     <div class="flex flex-col items-center justify-center">
-                        <dt class="mb-2 text-3xl font-extrabold">100</dt>
+                        <dt class="mb-2 text-3xl font-extrabold">{{$permohonan}}</dt>
                         <dd class="text-gray-500 dark:text-gray-400">Jumlah Permohonan</dd>
                     </div>
                     <div class="flex flex-col items-center justify-center">
-                        <dt class="mb-2 text-3xl font-extrabold">13</dt>
+                        <dt class="mb-2 text-3xl font-extrabold">{{$keberatan}}</dt>
                         <dd class="text-gray-500 dark:text-gray-400">Jumlah Keberatan</dd>
                     </div>
                     <div class="flex flex-col items-center justify-center">
-                        <dt class="mb-2 text-3xl font-extrabold text-center">90</dt>
+                        <dt class="mb-2 text-3xl font-extrabold text-center">{{$permohonanselesai}}</dt>
                         <dd class="text-gray-500 dark:text-gray-400">Permohonan Selesai</dd>
                     </div>
                     <div class="flex flex-col items-center justify-center">
-                        <dt class="mb-2 text-3xl font-extrabold">11</dt>
+                        <dt class="mb-2 text-3xl font-extrabold">{{$keberatanselesai}}</dt>
                         <dd class="text-gray-500 dark:text-gray-400">Keberatan Selesai</dd>
                     </div>
                 </dl>

@@ -41,7 +41,12 @@ class BeritaController extends Controller
             'deskripsi' => 'required',
             'created_at' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
-        ]);
+        ],
+        [
+            'required' => ':attribute Belum Diisi.',
+        ]
+    );
+        
         // $request->slug = \Str::slug($request->judul);
         // dd($request);
         $input = $request->all();
@@ -78,12 +83,13 @@ class BeritaController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {
+    {    
+        // dd($request);
         $input = [
             'judul' =>$request->judul,
             'deskripsi' => $request->deskripsi,
             'created_at' =>  \Carbon\Carbon::parse($request->created_at)->format('Y-m-d') ,
-            'image' =>$request->image,
+       
         ];
         if ($image = $request->file('image')) {
             $destinationPath = 'images/';

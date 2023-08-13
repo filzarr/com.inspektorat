@@ -35,9 +35,12 @@ class BannerController extends Controller
     {
         $request->validate([
             'judul' => 'required|max:255',
-            'deskripsi' => 'required',
+            'deskripsi' => '',
             'created_at' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+        ],
+        [
+            'required' => ':attribute Belum Diisi.',
         ]);
         $input = $request->all();
         if ($image = $request->file('image')) {
@@ -77,7 +80,7 @@ class BannerController extends Controller
             'judul' =>$request->judul,
             'deskripsi' => $request->deskripsi,
             'created_at' =>  \Carbon\Carbon::parse($request->created_at)->format('Y-m-d') ,
-            'image' =>$request->image,
+  
         ];
         if ($image = $request->file('image')) {
             $destinationPath = 'images/';

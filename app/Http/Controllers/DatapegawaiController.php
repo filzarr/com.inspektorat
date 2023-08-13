@@ -14,6 +14,9 @@ class DatapegawaiController extends Controller
     public function index()
     {
         $dataPegawai = Datapegawai::paginate(10);
+        $title = 'Hapus Data Pegawai!';
+        $text = "Apakah Anda Yakin Ingin Menghapus Data Pegawai?";
+        confirmDelete($title, $text);
         return view('admin.datapegawai.index', compact('dataPegawai'));
     }
 
@@ -33,6 +36,9 @@ class DatapegawaiController extends Controller
         $request->validate([
             'nama' => 'required|max:255',
             'jumlah' => 'required',
+        ],
+        [
+            'required' => ':attribute Belum Diisi.',
         ]);
         $input = $request->all();
         Datapegawai::create($input);

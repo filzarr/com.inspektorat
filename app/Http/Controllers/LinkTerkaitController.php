@@ -13,6 +13,9 @@ class LinkTerkaitController extends Controller
     public function index()
     {
         $linkterkait = Linkterkait::paginate(10);
+        $title = 'Hapus Link Terkait!';
+        $text = "Apakah Anda Yakin Ingin Menghapus Link Terkait?";
+        confirmDelete($title, $text);
         return view('admin.linkterkait.index', compact('linkterkait'));
     }
 
@@ -33,6 +36,9 @@ class LinkTerkaitController extends Controller
         $request->validate([
             'link' => 'required|max:255',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+        ],
+        [
+            'required' => ':attribute Belum Diisi.',
         ]);
         $input = $request->all();
         if ($image = $request->file('image')) {
@@ -59,15 +65,30 @@ class LinkTerkaitController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $linkterkait = Linkterkait::findOrFail($id);
+        return view('admin.linkterkait.edit', compact('linkterkait'));
+  
     }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {
-        //
+    {       
+        $input = [
+            'link' =>$request->link,
+        
+        ];
+        if ($image = $request->file('image')) {
+            $destinationPath = 'images/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+        }
+        Linkterkait::where('id', $id)->update($input);
+        Alert::success('Berhasil', 'Berhasil Mengupdate Link Terkait');
+        return redirect('/admin/linkterkait');
+ 
     }
 
     /**
@@ -75,6 +96,10 @@ class LinkTerkaitController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data = Linkterkait::findOrFail($id);
+        unlink("images/".$data->image);
+        $data->delete();
+        Alert::success('Berhasil', 'Berhasil Menghapus Link Terkait');
+        return redirect('/admin/linkterkait');
     }
 }

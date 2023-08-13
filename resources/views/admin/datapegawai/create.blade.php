@@ -12,12 +12,19 @@
                         <input type="text" name="nama" id="name"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             placeholder="Masukkan Nama Jabatan...">
+                            @error('nama')
+                            <p class="mt-2 text-sm text-red-600 dark:text-red-500 capitalize"><span class="">*Nama Jabatan Belum Diisi</p>
+                            @enderror
                     </div>
                     <div class="sm:col-span-2">
                         <label for="name" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Jumlah</label>
                         <input type="text" name="jumlah" id="name"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             placeholder="Masukkan Jumlah Pegawai...">
+                            @error('jumlah')
+                            <p class="mt-2 text-sm text-red-600 dark:text-red-500 capitalize"><span class="">*Jumlah Pegawai Belum Diisi</p>
+                            @enderror
+                            
                     </div>
                     
                 <div class="flex items-center space-x-4">

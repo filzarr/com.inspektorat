@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('judul');
             $table->string('image');
             $table->text('isi_berita');
-            $table->integer('view');
+            $table->integer('view')->default(0);
             $table->timestamps();
         });
     }

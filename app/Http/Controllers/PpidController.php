@@ -3,20 +3,51 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ppid;
+use App\Models\tampilanppid;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class PpidController extends Controller
 {
     public function tampilan(){
-        return view('admin.ppid.kelolatampilan');
+        $data = tampilanppid::get();
+        return view('admin.ppid.kelolatampilan', compact('data'));
     }
     public function vie(){
         return view('admin.ppid.index');
     }
+    public function edittampilan($id){
+        $data = tampilanppid::findOrFail($id);
+        return view('admin.ppid.edittampilan', compact('data'));
+    }
+    public function storetampilan(Request $request){
+       
+        if ($image = $request->file('image')) {
+            $input = [
+                'image' => $request->image,
+            ];
+            $destinationPath = 'images/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+            tampilanppid::where('id', $request->id)->update($input);
+        }
+      
+        else{
+            $input = [
+                'deskripsi' => $request->deskripsi,
+            ];
+            tampilanppid::where('id', $request->id)->update($input);
+        }
+        Alert::success('Berhasil', 'Berhasil Mengupdate Tampilan');
+        return redirect('/admin/ppid/kelolatampilan');
+    }
     public function index()
     {
         $listppid = Ppid::paginate(10);
+        $title = 'Hapus Informasi!';
+        $text = "Apakah Anda Yakin Ingin Menghapus Informasi?";
+        confirmDelete($title, $text);
         return view('admin.ppid.informasi', compact('listppid'));
     }
 
@@ -33,14 +64,14 @@ class PpidController extends Controller
      */
     public function store(Request $request)
     {
+        $request['tanggal'] = \Carbon\Carbon::parse($request->tanggal)->format('Y-m-d');
         $request->validate([
             'judul' => 'required|max:255',
             'kategori' => 'required',
-            'tanggal' => 'required',
             'link' => 'required',
             'jenis' => 'required',
-            'created_at' => 'required',
         ]);
+       
 
         $input = $request->all();
         Ppid::create($input);
@@ -61,7 +92,8 @@ class PpidController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = Ppid::findOrFail($id);
+        return view('admin.ppid.edit', compact('data'));
     }
 
     /**
@@ -69,7 +101,17 @@ class PpidController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+    
+        $input = [
+            'judul' =>$request->judul,
+            'kategori' => $request->kategori,
+            'link' =>$request->link,
+            'jenis' =>$request->jenis,
+            'tanggal'=>\Carbon\Carbon::parse($request->tanggal)->format('Y-m-d'),
+        ];
+        Ppid::where('id', $id)->update($input);
+        Alert::success('Berhasil', 'Berhasil Mengupdate Informasi');
+        return redirect('/admin/ppid');
     }
 
     /**
@@ -77,6 +119,9 @@ class PpidController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data = Ppid::findOrFail($id);
+        $data->delete();
+        Alert::success('Berhasil', 'Berhasil Menghapus Informasi');
+        return redirect('/admin/ppid/kelolainformasi');
     }
 }

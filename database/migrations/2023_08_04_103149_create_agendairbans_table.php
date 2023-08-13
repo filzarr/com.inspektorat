@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('judul');
             $table->text('deskripsi');
             $table->string('image');
+            $table->enum('irban', ['irban1','irban2','irban3','irban4','irbansus']);
             $table->timestamps();
         });
     }

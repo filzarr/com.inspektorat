@@ -14,7 +14,8 @@ class GaleriVideoController extends Controller
      */
     public function index()
     {
-        return view('admin.galerivideo.index');
+        $video = GaleriVideo::paginate(15);
+        return view('admin.galerivideo.index', compact('video'));
     }
 
     /**
@@ -30,7 +31,13 @@ class GaleriVideoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'links' => 'required',
+        ]);
+        $input = $request->all();
+        GaleriVideo::create($input);
+        Alert::success('Berhasil', 'Berhasil Menambahkan Berita');
+        return redirect('/admin/galerivideo');
     }
 
     /**
@@ -46,7 +53,9 @@ class GaleriVideoController extends Controller
      */
     public function edit(GaleriVideo $galeriVideo)
     {
-        //
+        $video = GaleriVideo::findOrFail($id);
+        return view('admin.berita.edit', compact('berita'));
+ 
     }
 
     /**

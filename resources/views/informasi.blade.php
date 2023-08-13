@@ -2,7 +2,7 @@
 @section('content')
     <div class="w-full px-28 mt-20 mb-20">
         <div class="flex justify-center text-center  font-semibold">
-            <h1 class="text-4xl uppercase font-bold text-[#063A69]">Daftar Informasi Berkala</h1>
+            <h1 class="text-4xl uppercase font-bold text-[#063A69]">Daftar {{ $jenis === "informasi-publik" ? "Informasi Publik" : "Informasi Berkala" }} </h1>
         </div>
 
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-10">
@@ -27,57 +27,28 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            1.
-                        </th>
-                        <td class="px-6 py-4">
-                            Silver
-                        </td>
-                        <td class="px-6 py-4">
-                            Laptop
-                        </td>
-                        <td class="px-6 py-4">
-                            $2999
-                        </td>
-                        <td class="px-6 py-4">
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Lihat</a>
-                        </td>
-                    </tr>
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            2.
-                        </th>
-                        <td class="px-6 py-4">
-                            White
-                        </td>
-                        <td class="px-6 py-4">
-                            Laptop PC
-                        </td>
-                        <td class="px-6 py-4">
-                            $1999
-                        </td>
-                        <td class="px-6 py-4">
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Lihat</a>
-                        </td>
-                    </tr>
-                    <tr class="bg-white dark:bg-gray-800">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            3.
-                        </th>
-                        <td class="px-6 py-4">
-                            Black
-                        </td>
-                        <td class="px-6 py-4">
-                            Accessories
-                        </td>
-                        <td class="px-6 py-4">
-                            $99
-                        </td>
-                        <td class="px-6 py-4">
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Lihat</a>
-                        </td>
-                    </tr>
+                    @foreach ($data as $item)
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <th scope="row"
+                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                {{$loop->iteration}}
+                            </th>
+                            <td class="px-6 py-4">
+                                {{$item->judul}}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{$item->kategori}}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{$item->tanggal}}
+                            </td>
+                            <td class="px-6 py-4">
+                                <a href="{{$item->link}}" target="_blank"
+                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Lihat</a>
+                            </td>
+                        </tr>
+                    @endforeach
+
                 </tbody>
             </table>
         </div>

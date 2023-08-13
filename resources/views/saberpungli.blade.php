@@ -22,7 +22,7 @@
 
         </div>
     </section>
-    <div class="w-full px-28 mt-10">
+    <div class="w-full px-10 md:px-28 mt-10">
 
         <div id="accordion-arrow-icon" data-accordion="open">
             <h2 id="accordion-arrow-icon-heading-5">
@@ -40,20 +40,7 @@
             </h2>
             <div id="accordion-arrow-icon-body-5" class="hidden" aria-labelledby="accordion-arrow-icon-heading-5">
                 <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components from
-                        Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another
-                        difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers
-                        sections of pages.</p>
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both Flowbite,
-                        Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the best
-                        of two worlds.</p>
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-                    <ul class="pl-5 text-gray-500 list-disc dark:text-gray-400">
-                        <li><a href="https://flowbite.com/pro/"
-                                class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
-                        <li><a href="https://tailwindui.com/" rel="nofollow"
-                                class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
-                    </ul>
+                    <div class="mb-2 text-gray-500 dark:text-gray-400">{!!$profile->deskripsi!!}</div>
                 </div>
             </div>
             <h2 id="accordion-arrow-icon-heading-3">
@@ -71,20 +58,8 @@
             </h2>
             <div id="accordion-arrow-icon-body-3" class="hidden" aria-labelledby="accordion-arrow-icon-heading-3">
                 <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components from
-                        Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another
-                        difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers
-                        sections of pages.</p>
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both Flowbite,
-                        Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the best
-                        of two worlds.</p>
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-                    <ul class="pl-5 text-gray-500 list-disc dark:text-gray-400">
-                        <li><a href="https://flowbite.com/pro/"
-                                class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
-                        <li><a href="https://tailwindui.com/" rel="nofollow"
-                                class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
-                    </ul>
+                    <div class="mb-2 text-gray-500 dark:text-gray-400">{!!$tugas->deskripsi!!}</div>
+                
                 </div>
             </div>
             <h2 id="accordion-arrow-icon-heading-4">
@@ -102,20 +77,8 @@
             </h2>
             <div id="accordion-arrow-icon-body-4" class="hidden" aria-labelledby="accordion-arrow-icon-heading-4">
                 <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components from
-                        Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another
-                        difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers
-                        sections of pages.</p>
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both Flowbite,
-                        Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the best
-                        of two worlds.</p>
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-                    <ul class="pl-5 text-gray-500 list-disc dark:text-gray-400">
-                        <li><a href="https://flowbite.com/pro/"
-                                class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
-                        <li><a href="https://tailwindui.com/" rel="nofollow"
-                                class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
-                    </ul>
+                    <div class="mb-2 text-gray-500 dark:text-gray-400">{!!$wewenang->deskripsi!!}</div>
+                 
                 </div>
             </div>
             <h2 id="accordion-arrow-icon-heading-6">
@@ -133,26 +96,14 @@
             </h2>
             <div id="accordion-arrow-icon-body-6" class="hidden" aria-labelledby="accordion-arrow-icon-heading-6">
                 <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components from
-                        Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another
-                        difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers
-                        sections of pages.</p>
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both Flowbite,
-                        Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the best
-                        of two worlds.</p>
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-                    <ul class="pl-5 text-gray-500 list-disc dark:text-gray-400">
-                        <li><a href="https://flowbite.com/pro/"
-                                class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
-                        <li><a href="https://tailwindui.com/" rel="nofollow"
-                                class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
-                    </ul>
+                    <div class="mb-2 text-gray-500 dark:text-gray-400">{!!$visi->deskripsi!!}</div>
+                
                 </div>
             </div>
         </div>
 
     </div>
-    <div class="w-full px-28 mt-20">
+    <div class="w-full px-10 md:px-28 mt-20">
         <div class="flex justify-center text-center  font-semibold">
             <h1 class="text-4xl uppercase font-bold text-[#3E6E8B]">Struktur</h1>
         </div>
@@ -160,12 +111,12 @@
             <img src="" class="w-full h-96" alt="">
         </div>
     </div>
-    <div class="w-full px-28 mt-20 mb-20">
+    <div class="w-full px-10 md:px-28 mt-20 mb-20">
         <div class="flex justify-center text-center font-semibold">
-            <h1 class="text-4xl uppercase font-bold text-[#3E6E8B]">Langkah Untuk Melapor</h1>
+            <h1 class=" text-xl md:text-4xl uppercase font-bold text-[#3E6E8B]">Langkah Untuk Melapor</h1>
             
         </div>
-        <div class="grid grid-cols-4 gap-10 mt-20 mb-20 text-center">
+        <div class="grid lg:grid-cols-4 gap-10 mt-20 mb-20 text-center">
             <div class="">
                 <div class="flex justify-center mb-6">
                     <svg class=" h-20 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 12 20">

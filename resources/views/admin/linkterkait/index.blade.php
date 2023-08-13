@@ -38,7 +38,7 @@
                         <tbody>
                             @foreach ($linkterkait as $item)
                             <tr class="border-b dark:border-gray-700">
-                                <td class="px-4 py-3"><img src="{{$item->image}}" class="w-20 h-20" alt=""></td>
+                                <td class="px-4 py-3"><img src="/images/{{$item->image}}" class="w-20 h-20" alt=""></td>
                                 <td class="px-4 py-3">{{$item->link}}</td>
                                 <td class="px-4 py-3 flex items-center justify-end">
                                     <button id="apple-imac-27-dropdown-button" data-dropdown-toggle="apple-imac-27-dropdown"
@@ -54,17 +54,14 @@
                                         class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
                                         <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
                                             aria-labelledby="apple-imac-27-dropdown-button">
+                                         
                                             <li>
-                                                <a href="#"
-                                                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Tampil</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"
+                                                <a href="/admin/linkterkait/{{$item->id}}/edit"
                                                     class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
                                             </li>
                                         </ul>
                                         <div class="py-1">
-                                            <a href="#"
+                                            <a href="{{ route('linkterkait.destroy', $item->id) }}"   data-confirm-delete="true"
                                                 class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Hapus</a>
                                         </div>
                                     </div>

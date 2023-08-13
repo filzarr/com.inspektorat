@@ -4,7 +4,7 @@
     <section class="bg-white dark:bg-gray-900 mt-5 ">
         <div class="max-w-2xl  py-10 mx-auto lg:py-16">
             <h2 class="mb-4 text-3xl  font-bold text-gray-900 dark:text-white text-center">Tambah Daftar Informasi</h2>
-            <form action="/admin/ppid" method="POST" enctype="multipart/form-data">
+            <form action="/admin/ppid/kelolainformasi" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="grid gap-3 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">
                     <div class="sm:col-span-2">
@@ -21,7 +21,7 @@
                                 <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                             </svg>
                         </div>
-                        <input datepicker datepicker-autohide type="text" name="created_at"
+                        <input datepicker datepicker-autohide type="text" name="tanggal"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Pilih Tanggal">
                     </div>
@@ -41,10 +41,10 @@
                     <div class="mb-6">
                         <label for="countries"
                             class=" mt-2 block mb-2 text-sm font-semibold text-gray-700 dark:text-white">Jenis</label>
-                        <select id="jenis"
+                        <select id="jenis" name="jenis"
                             class="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                            <option>Informasi Publik</option>
-                            <option>Informasi Berkala</option>
+                            <option value="informasipublik">Informasi Publik</option>
+                            <option value="informasiberkala">Informasi Berkala</option>
                         </select>
                     </div>
                 </div>
