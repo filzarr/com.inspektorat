@@ -97,8 +97,7 @@
                       </svg>
 
                     <span class="flex-1 ml-3 whitespace-nowrap">Banner</span>
-                    <span
-                        class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span>
+
                 </a>
             </li>
             <li>
@@ -112,8 +111,6 @@
                     </svg>
 
                     <span class="flex-1 ml-3 whitespace-nowrap">Berita</span>
-                    <span
-                        class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span>
                 </a>
             </li>
             <li>
@@ -124,8 +121,7 @@
                       </svg>
                    
                     <span class="flex-1 ml-3 whitespace-nowrap">Menu</span>
-                    <span
-                        class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span>
+
                 </a>
             </li>
             <li>
@@ -211,6 +207,8 @@
                         <path d="M12 3H4a4 4 0 0 0-4 4v6a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V7a4 4 0 0 0-4-4zM8 7a3.99 3.99 0 0 0-1.354-3H12a3 3 0 0 1 3 3v6H8V7zm-3.415.157C4.42 7.087 4.218 7 4 7c-.218 0-.42.086-.585.157C3.164 7.264 3 7.334 3 7a1 1 0 0 1 2 0c0 .334-.164.264-.415.157z"/>
                       </svg>
                     <span class="flex-1 ml-3 whitespace-nowrap">Laporan</span>
+                    <span
+                    class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">{{$laporan + $lapor + $laporsaber}}</span>
                 </a>
             </li>
    

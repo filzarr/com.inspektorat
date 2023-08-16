@@ -15,6 +15,7 @@ use App\Models\tampilansaberpungli;
 use App\Models\tampilanppid;
 use App\Models\Laporaninformasi;
 use App\Models\Laporankeberatan;
+use App\Models\Agendairban;
 use App\Models\Agenda;
 use App\Models\Comments;
 use Redirect;
@@ -39,7 +40,7 @@ class DashboardController extends Controller
         return redirect()->back();
     }
     public function index(){
-        $link = Linkterkait::get();
+       
         $berita = Berita::limit(6)->get();
         $banner = Banner::get();
         $datapegawai = Datapegawai::get();
@@ -48,7 +49,7 @@ class DashboardController extends Controller
         Pengunjung::create();
         $video = GaleriVideo::get();
         // dd($berita);
-        return view('welcome', compact('link','berita','banner', 'datapegawai','galerifoto','agenda','video'));
+        return view('welcome', compact('berita','banner', 'datapegawai','galerifoto','agenda','video'));
     }
     public function detailberita($slug){
          $berita = Berita::where('slug',$slug)->with('comments')->limit(1)->get();
@@ -111,8 +112,9 @@ class DashboardController extends Controller
         $profile = Irban::where('irban', $irban)->where('jenis','profile')->first();
         $visi = Irban::where('irban', $irban)->where('jenis','visi')->first();
         $misi = Irban::where('irban', $irban)->where('jenis','misi')->first();
-        // dd($data);
-        return view('irban', compact('profile','visi','misi'));
+        $agenda = Agendairban::where('irban', $irban)->paginate(6);
+        // dd($agenda);
+        return view('irban', compact('profile','visi','misi','agenda'));
     }
     public function banner($slug){
         $berita = Banner::where('slug',$slug)->limit(1)->get();

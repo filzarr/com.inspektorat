@@ -28,16 +28,7 @@
                 </div>
             @endforeach
             <!-- Item 2 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="slide1.jpg"
-                    class=" brightness-50  absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                    alt="...">
-                {{-- <div class="max-sm:hidden absolute left-56 top-56">
-                    <p class=" text-white text-xs  md:text-3xl block font-semibold md:w-[30rem]">Channel Layanan Pengaduan
-                        Masyarakat Terkait Pembangunan Sumatera Utara</p>
-                    <button class="bg-cyan-700 p-2 mt-3 font-medium rounded-md text-white text-xs md:text-lg">Selengkapnya</button>
-                </div> --}}
-            </div>
+   
 
         </div>
         <!-- Slider indicators -->
@@ -91,7 +82,7 @@
                         <div class="flex gap-5 md:gap-10 ">
                             <a href="/berita/{{ $item->slug }}">
                                 <img src="/images/{{ $item->image }}"
-                                    class="  max-sm:w-32   max-sm:h-32 lg:h-40  lg:w-52  rounded-xl drop-shadow-2xl border border-black/10"
+                                    class="  max-sm:w-32   max-sm:h-32 lg:h-40  lg:w-52  rounded-xl drop-shadow-2xl border border-black/10" id="gam"
                                     alt="">
                             </a>
                             <div class=" grid justify-stretch">
@@ -122,14 +113,7 @@
                     <div class="w-full bg-[#214E6D] px-0 sm:px-5 flex justify-center py-3 font-bold text-[#EFEFF0]">Inpektur
                         Inspektorat Sumatera Utara</div>
                     <div class=""><img src="kepala.png" class=" h-60 mt-3 w-full" alt=""></div>
-                    <div class="mt-10 w-full bg-[#214E6D] flex justify-center py-3 font-bold text-[#EFEFF0]">Link
-                        Terkait</div>
-                    <div class="grid grid-cols-3 gap-10 mt-5">
-                        @foreach ($link as $item)
-                            <a href="{{ $item->link }}" target="_blank"><img src="/images/{{ $item->image }}"
-                                    alt="" class="  border-4 border-black/10 shadow-md"></a>
-                        @endforeach
-                    </div>
+                        <x-terkait></x-terkait>
                     <x-statistik></x-statistik>
                     <div class="mt-10 w-full bg-[#214E6D] flex justify-center py-3 font-bold text-[#EFEFF0]">Newslatter
                     </div>
@@ -195,7 +179,7 @@
 
         </div>
         <div class="flex w-full justify-center mt-10">
-            <a href="/berita">
+            <a href="/agenda">
 
                 <p
                     class=" font-semibold text-[#3E6E8B] text-xl hover:underline duration-500  translate-x-0 hover:translate-x-1 ease-out ">

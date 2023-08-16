@@ -107,13 +107,7 @@
                     <div class="w-full bg-[#214E6D] flex justify-center py-3 font-bold text-[#EFEFF0]">Inpektur
                         Inspektorat Sumatera Utara</div>
                     <div class=""><img src="kepala.png" class=" h-60 mt-3 w-full" alt=""></div>
-                    <div class="mt-10 w-full bg-[#214E6D] flex justify-center py-3 font-bold text-[#EFEFF0]">Link
-                        Terkait</div>
-                    <div class="grid grid-cols-3 gap-10 mt-5">
-                        <img src="link1.png" alt="" class="  border-4 border-black/10 shadow-md">
-                        <img src="link2.jpeg" alt="" class=" border-4 border-black/10 shadow-md">
-                        <img src="link3.jpeg" alt="" class=" border-4 border-black/10 shadow-md">
-                    </div>
+                   <x-terkait></x-terkait>
                     <x-statistik></x-statistik>
                     <div class="mt-10 w-full bg-[#214E6D] flex justify-center py-3 font-bold text-[#EFEFF0]">Newslatter
                     </div>

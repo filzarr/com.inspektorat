@@ -25,7 +25,7 @@ Route::controller(DashboardController::class)->group(function () {
     Route::get('/banner/{slug}', 'banner');
     Route::get('/agenda/{slug}', 'agenda');
     Route::get('/agenda', 'agend')->name('agend');
-    Route::get('/berita', 'berita')->name('bert');
+    Route::get('/berita', 'berita')->name('berta');
     Route::post('/comment/{idberita}', 'comment');
     Route::get('/ppid', 'ppid');
     Route::get('/saberpungli', 'saberpungli');
@@ -37,6 +37,8 @@ Route::controller(FormController::class)->group(function () {
     Route::post('/forminformasi', 'storedinformasi');
     Route::get('/formkeberatan', 'formkeberatan');
     Route::post('/formkeberatan', 'storedkeberatan');
+    Route::get('/formsaberpungli', 'formsaberpungli');
+    Route::post('/formsaberpungli', 'storedsaberpungli');
     Route::get('/cek-laporan', 'ceklaporan');
     Route::post('/cek-laporan', 'carilaporan');
     Route::get('/cek-laporan/{jenis}/{id}', 'balasan')->name('balasan');
@@ -87,6 +89,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::post('ppid/{jenis}/{id}/balasan', [LaporanController::class, 'balas']);
         Route::get('ppid/{jenis}/{id}', [LaporanController::class, 'lihat']);
         Route::get('saberpungli', [LaporanController::class, 'saberpungli']);
+        Route::get('saberpungli/{id}', [LaporanController::class, 'lsaberpungli']);
+        Route::get('saberpungli/{id}/balasan', [LaporanController::class, 'lihatsaberpungli']);
+        Route::post('saberpungli/{id}/balasan', [LaporanController::class, 'storedsaberpungli']);
     });
 });
 

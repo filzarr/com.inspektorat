@@ -80,38 +80,24 @@
         <div class="bg-white rounded px-10 py-5 border-gray-200 border-2">
             <p class="text-2xl font-semibold text-gray-800 ">Laporan Terbaru</p>
             <div class="grid grid-rows-2 mt-8 gap-10">
+                @foreach ($c as $c)
+                    
                 <div class=" grid gap-2">
                     <div class="flex justify-between">
-                        <p class="font-semibold text-gray-800 text-lg">Filza Rizki Ramadhan</p>
-                        <button class="rounded-full bg-gray-800 p-2">
+                        <p class="font-semibold text-gray-800 text-lg">{{$c->nama}}</p>
+                        <a href="/admin/laporan" class="rounded-full bg-gray-800 p-2">
                             <svg class="w-3 h-3 text-gray-100 dark:text-white" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="1.5" d="M1 5h12m0 0L9 1m4 4L9 9" />
                             </svg>
-                        </button>
+                        </a>
                     </div>
-                    <div class=""><span class="text-xs px-3 py-1 text-gray-100 rounded-2xl bg-gray-700">Permohonan
-                            Informasi</span></div>
-                    <div class=" text-xs font-medium text-gray-500">Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Optio odio debitis minus sapiente incidunt voluptas fuga deleniti</div>
+                    <div class=""><span class="text-xs px-3 py-1 text-gray-100 rounded-2xl bg-gray-700">{{$c->keterangan}}</span></div>
+                    <div class=" text-xs font-medium text-gray-500">{{$c->deskripsi}}</div>
                 </div>
-                <div class=" grid gap-2">
-                    <div class="flex justify-between">
-                        <p class="font-semibold text-gray-800 text-lg">Filza Rizki Ramadhan</p>
-                        <button class="rounded-full bg-gray-800 p-2">
-                            <svg class="w-3 h-3 text-gray-100 dark:text-white" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="1.5" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                            </svg>
-                        </button>
-                    </div>
-                    <div class=""><span class="text-xs px-3 py-1 text-gray-100 rounded-2xl bg-gray-700">Permohonan
-                            Informasi</span></div>
-                    <div class=" text-xs font-medium text-gray-500">Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Optio odio debitis minus sapiente incidunt voluptas fuga deleniti</div>
-                </div>
+                @endforeach
+          
 
             
              

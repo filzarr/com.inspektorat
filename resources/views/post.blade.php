@@ -43,7 +43,8 @@
                                     </svg>
                                     <p class="max-md:text-xs">{{ $item->views }} View</p>
                                 </div>
-                                @if (Route::is('bert'))
+                          
+                                @if (\Request::is('berita/*'))
                                 <div class="flex  items-center text-sm gap-2 ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                         fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
@@ -74,14 +75,7 @@
                                     Inpektur
                                     Inspektorat Sumatera Utara</div>
                                 <div class=""><img src="/kepala.png" class=" h-60 mt-3 w-full" alt=""></div>
-                                <div class="mt-10 w-full bg-[#214E6D] flex justify-center py-3 font-bold text-[#EFEFF0]">
-                                    Link
-                                    Terkait</div>
-                                <div class="grid grid-cols-3 gap-10 mt-5">
-                                    <img src="link1.png" alt="" class="  border-4 border-black/10 shadow-md">
-                                    <img src="link2.jpeg" alt="" class=" border-4 border-black/10 shadow-md">
-                                    <img src="link3.jpeg" alt="" class=" border-4 border-black/10 shadow-md">
-                                </div>
+                               <x-terkait></x-terkait>
                                 <x-statistik></x-statistik>
                                 <div class="mt-10 w-full bg-[#214E6D] flex justify-center py-3 font-bold text-[#EFEFF0]">
                                     Newslatter
@@ -105,7 +99,7 @@
 
 
 
-            @if (Route::is('bert'))
+            @if (\Request::is('berita/*'))
                 
             <div class="bg-white">
                 <div class="flex justify-start">
