@@ -16,11 +16,14 @@ use App\Http\Controllers\DatapegawaiController;
 use App\Http\Controllers\GaleriVideoController;
 use App\Http\Controllers\LinkTerkaitController;
 use App\Http\Controllers\SaberpungliController;
+use App\Http\Controllers\ImageUploadController;
+use App\Http\Controllers\VidioKegiatanController;
 
 
 // GENERAL
 Route::controller(DashboardController::class)->group(function () {
     Route::get('/', 'index');
+    Route::get('/menu/{judul}', 'menu');
     Route::get('/berita/{slug}', 'detailberita');
     Route::get('/banner/{slug}', 'banner');
     Route::get('/agenda/{slug}', 'agenda');
@@ -51,6 +54,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('linkterkait', LinkTerkaitController::class);
     Route::resource('menu', MenuController::class);
     Route::resource('berita', BeritaController::class);
+    Route::resource('vidiokegiatan', VidioKegiatanController::class);
     Route::resource('banner', BannerController::class);
     Route::resource('datapegawai', DatapegawaiController::class);
     Route::resource('galerifoto', GalerifotoController::class);
@@ -71,6 +75,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/irban', [IrbanController::class, 'irban']);
     Route::prefix('irban')->group(function () {
         Route::get('{irban}', [IrbanController::class, 'index'])->name('irban');
+        Route::get('{irban}/create', [IrbanController::class, 'create'])->name('irban');
+        Route::get('{irban}/{id}/hapus', [IrbanController::class, 'destroy'])->name('irban');
+        Route::post('{irban}', [IrbanController::class, 'store'])->name('irban');
         Route::get('{irban}/{jenis}/edit', [IrbanController::class, 'edit']);
         Route::patch('{irban}/{jenis}', [IrbanController::class, 'update']);
         Route::get('{irban}/agenda', [IrbanController::class, 'agenda'])->name('irb');
@@ -94,7 +101,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::post('saberpungli/{id}/balasan', [LaporanController::class, 'storedsaberpungli']);
     });
 });
-
+Route::post('image-upload', [ImageUploadController::class, 'storeImage'])->name('image.upload');
 require __DIR__.'/auth.php';
 
 
@@ -102,7 +109,7 @@ require __DIR__.'/auth.php';
 
 // });
 
-// Route::get('/admin/irban1/capaiankinerja/create', function () {
-//     return view('admin.irban.irban1.createcapaian');
+// Route::get('/', function () {
+//     return echo "not found";
 // });
 

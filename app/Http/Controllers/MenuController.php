@@ -13,7 +13,7 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $menu = Menu::paginate(15);
+        $menu = Menu::get();
         $title = 'Hapus Menu!';
         $text = "Apakah Anda Yakin Ingin Menghapus Menu?";
         confirmDelete($title, $text);
@@ -57,8 +57,8 @@ class MenuController extends Controller
      */
     public function edit(string $id)
     {
-        $menu = Menu::findOrFail($id);
-        return view('admin.menu.edit', compact('menu'));
+        // $menu = Menu::findOrFail($id);
+        return view('admin.menu.edit', compact('id'));
        
     }
 

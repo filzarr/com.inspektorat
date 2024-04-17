@@ -8,15 +8,69 @@
             width: auto;
             height: auto;
         }
+
+
+        @media only screen and (max-width: 1023px) {
+
+            #gam {
+                display: block;
+                max-width: 8rem !important;
+                max-height: 10rem !important;
+                width: auto;
+                height: auto;
+            }
+        }
     </style>
-    <div id="default-carousel" class="relative w-full  max-sm:-mt-10  max-sm:h-60" data-carousel="slide">
+
+
+
+<!-- <button data-modal-target="staticModal" id="awal" data-modal-toggle="staticModal"
+              class="hidden text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              type="button">
+              Toggle modal
+          </button>
+
+          <div id="staticModal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
+              class="fixed top-0 left-0 right-0 z-50 hidden   p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+              <div class="relative   max-h-full">
+                  <div class="relative w-5xl bg-white rounded-b overflow-hidden rounded-lg shadow dark:bg-gray-700">
+                      <div class="flex items-start justify-between p-4   rounded dark:border-gray-600">
+                          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                          Roadshow Bus KPK 2023
+                          </h3>
+                          <button type="button"
+                              class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                              data-modal-hide="staticModal">
+                              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                  viewBox="0 0 14 14">
+                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                              </svg>
+                              <span class="sr-only">Close modal</span>
+                          </button>
+                      </div>
+                      <div class=" rounded-b p-3">
+                          <img src="/images/20231018093839.gif" alt="this slowpoke moves"   class="w-full" />
+                            
+                      </div>
+                
+                      
+                  </div>
+              </div>
+          </div> -->
+    <!-- Modal toggle -->
+
+
+    <!-- Main modal -->
+
+    <div id="default-carousel" class="relative w-full    max-sm:h-60" data-carousel="slide">
         <!-- Carousel wrapper -->
         <div class="relative h-60 overflow-hidden  md:h-[35rem]">
             <!-- Item 1 -->
             @foreach ($banner as $item)
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
                     <img src="/images/{{ $item->image }}"
-                        class=" brightness-50  absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                        class=" brightness-50  absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                         alt="...">
                     <div class=" absolute md:left-56 max-sm:left-14  max-sm:top-28 md:top-56">
                         <p class=" text-white text-[10px]  md:text-3xl  font-semibold md:w-[30rem]">{{ $item->judul }}</p>
@@ -28,7 +82,7 @@
                 </div>
             @endforeach
             <!-- Item 2 -->
-   
+
 
         </div>
         <!-- Slider indicators -->
@@ -71,36 +125,44 @@
             </span>
         </button>
     </div>
-    <div class="w-full md:mt-20 px-5 md:px-28">
+    <div class="w-full md:mt-20 mt-10 px-5 md:px-28">
         <div class="md:flex  justify-between gap-10">
-            <div class=" max-sm:w-full md:w-3/6">
+            <div class=" max-sm:w-full  md:w-3/6">
                 <div class="flex justify-start">
                     <p class=" max-sm:text-xl md:text-4xl uppercase font-bold text-[#3E6E8B]">Berita Terkini</p>
                 </div>
-                <div class="grid auto-rows-max md:mt-20 mt-10 gap-10">
+                <div class="grid auto-rows-max  mt-10 gap-10">
                     @foreach ($berita as $item)
                         <div class="flex gap-5 md:gap-10 ">
                             <a href="/berita/{{ $item->slug }}">
                                 <img src="/images/{{ $item->image }}"
-                                    class="  max-sm:w-32   max-sm:h-32 lg:h-40  lg:w-52  rounded-xl drop-shadow-2xl border border-black/10" id="gam"
+                                    class="     rounded-xl drop-shadow-2xl border border-black/10" id="gam"
                                     alt="">
                             </a>
                             <div class=" grid justify-stretch">
                                 <a href="/berita/{{ $item->slug }}">
-                                    <p class="text-[#3E6E8B] max-sm:text-base md:text-lg font-bold">{{ $item->judul }}</p>
+                                    <p class="text-[#3E6E8B] max-sm:text-base md:text-lg font-bold text-break break-words">
+                                        {{ Illuminate\Support\Str::limit(strip_tags($item->judul), $limit = 50, $end = '...') }}
+                                    </p>
                                 </a>
                                 <p class=" max-sm:text-xs md:text-sm font-bold text-black/80">
                                     {{ \Carbon\Carbon::parse($item->created_at)->format('d M Y') }} </p>
                                 <p class=" text-xs font-bold text-black/80">Posted By Admin </p>
-                                <div class=" capitalize text-xs  font-semibold  text-black/70 ">
-                                    {!! Illuminate\Support\Str::limit(strip_tags($item->deskripsi), $limit = 100, $end = '...') !!} </div>
+                                <div class=" capitalize text-xs  font-semibold  text-black/70 break-words">
+                                    @if ($agent->isMobile())
+                                        {!! Illuminate\Support\Str::limit(strip_tags($item->deskripsi), $limit = 50, $end = '...') !!}
+                                    @else
+                                        {!! Illuminate\Support\Str::limit(strip_tags($item->deskripsi), $limit = 500, $end = '...') !!}
+                                    @endif
+
+                                </div>
                             </div>
                         </div>
                     @endforeach
 
 
                 </div>
-                <a href="/berita" class="lg:hidden block">
+                <a href="/berita" class=" lg:hidden block">
                     <div class="flex justify-start max-sm:mt-10 max-sm:mb-10">
                         <p
                             class=" font-semibold text-[#3E6E8B] text-xl hover:underline duration-500  translate-x-0 hover:translate-x-1 ease-out ">
@@ -110,10 +172,11 @@
             </div>
             <div class="md:w-2/6    md:px-10 block">
                 <div class="w-full   border-2 border-black/5 bg-[#EFEFF0] px-5 py-3 rounded-md">
-                    <div class="w-full bg-[#214E6D] px-0 sm:px-5 flex justify-center py-3 font-bold text-[#EFEFF0]">Inpektur
+                    <div class="w-full bg-[#214E6D] px-0 sm:px-5 flex justify-center py-3 font-bold text-[#EFEFF0]">
+                        Inpektur
                         Inspektorat Sumatera Utara</div>
                     <div class=""><img src="kepala.png" class=" h-60 mt-3 w-full" alt=""></div>
-                        <x-terkait></x-terkait>
+                    <x-terkait></x-terkait>
                     <x-statistik></x-statistik>
                     <div class="mt-10 w-full bg-[#214E6D] flex justify-center py-3 font-bold text-[#EFEFF0]">Newslatter
                     </div>
@@ -125,6 +188,7 @@
                             placeholder="Masukkan email ">
                         <button class=" bg-blue-500 text-white w-full mt-5 py-3 font-semibold">Submit</button>
                     </div>
+                    <!-- <x-Arsipkegiatan></x-Arsipkegiatan> -->
                 </div>
             </div>
 
@@ -137,6 +201,7 @@
             </div>
         </a>
     </div>
+
     <div class="w-full mt-10 md:px-28 px-5 py-10 bg-[#EFEFF0]">
         <div class="flex justify-start">
             <p class=" font-bold md:text-3xl text-2xl text-[#3E6E8B] underline underline-offset-8">Agenda</p>
@@ -195,13 +260,24 @@
 
         <div class="grid md:grid-cols-5 gap-2 max-sm:mx-10 mt-10">
             @foreach ($galerifoto as $item)
-                <div class="flip-box">
-                    <div class="flip-box-inner">
-                        <div class="flip-box-front">
-                            <img class="h-auto max-w-full rounded-lg" src="/images/{{ $item->image }}" alt="">
+                <!-- <div class=" flip-box">
+                                    <div class=" flip-box-inner">
+                                        <div class=" flip-box-front">
+                                            <img class="h-auto max-w-full rounded-lg" src="/images/{{ $item->image }}" alt="">
+                                        </div>
+                                        <div class="hidden flip-box-back">
+                                            <h2>{{ $item->deskripsi }}</h2>
+                                        </div>
+                                    </div>
+                                </div> -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="/images/{{ $item->image }}" alt="Avatar"
+                                style="width:250px;height:200px;border-radius: 10px;">
                         </div>
-                        <div class="flip-box-back">
-                            <h2>{{ $item->deskripsi }}</h2>
+                        <div class="flip-card-back">
+                            <h1>{{ $item->deskripsi }}</h1>
                         </div>
                     </div>
                 </div>
@@ -226,7 +302,7 @@
             @foreach ($video as $item)
                 <div class="relative w-full h-full">
                     <button data-modal-target="{{ $item->id }}" data-modal-toggle="{{ $item->id }}"
-                        class="absolute inset-0 z-50 flex items-center w-full h-full justify-center text-white">
+                        class="absolute inset-0 z-10 flex items-center w-full h-full justify-center text-white">
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
                             class="bi bi-play-circle" viewBox="0 0 16 16">
                             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -235,7 +311,7 @@
                         </svg>
                     </button>
                     <div id="{{ $item->id }}" tabindex="-1" aria-hidden="true"
-                        class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                        class="fixed z-50 top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
                         <div class="relative w-full max-w-2xl max-h-full">
                             <!-- Modal content -->
                             <div class="relative  bg-transparent  dark:bg-gray-700">
@@ -243,7 +319,7 @@
                                 <div class="flex items-start justify-between p-4 brounded-t ">
 
                                     <button type="button"
-                                        class="text-gray-800 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                        class=" text-gray-800 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
                                         data-modal-hide="{{ $item->id }}">
                                         <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                             fill="none" viewBox="0 0 14 14">
@@ -255,7 +331,7 @@
                                 </div>
                                 <!-- Modal body -->
                                 <iframe src="https://drive.google.com/file/d/{{ $item->links }}/preview"
-                                    class="w-full h-96" allow="autoplay"></iframe>
+                                    class=" w-full h-96" allow="autoplay"></iframe>
                             </div>
                         </div>
                     </div>
@@ -294,4 +370,47 @@
             </div>
         </div>
     </div>
+
+    
+
+
+    <button data-modal-target="staticModal" id="modalEl" data-modal-toggle="staticModal"
+        class="hidden tes text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        type="button">
+        Toggle modal
+    </button>
+
+    <!-- Main modal -->
+    <div id="staticModal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
+        class="fixed top-0 left-0 right-0 z-50 hidden   p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative   max-h-full">
+            <!-- Modal content -->
+            <div class="relative w-5xl bg-white rounded-b overflow-hidden rounded-lg shadow dark:bg-gray-700">
+                <!-- Modal header -->
+                <div class="flex items-start justify-between p-4   rounded dark:border-gray-600">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                        {{ $popup->judul }}
+                    </h3>
+                    <button type="button"
+                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                        data-modal-hide="staticModal">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>
+                <!-- Modal body -->
+                <div class=" rounded-b p-3">
+                    <img src="/images/{{ $popup->image }}" alt="this slowpoke moves" class="w-full" />
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
 @endsection

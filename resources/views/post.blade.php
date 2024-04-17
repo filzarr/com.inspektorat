@@ -4,6 +4,7 @@
         body {
             background-color: rgb(239, 239, 239) !important;
         }
+     
     </style>
     <div class="w-full mt-5 px-5 lg:px-10 mb-10">
         <div class="py-10 bg-white px-5 lg:px-10 border-2 rounded-lg border-gray-200">
@@ -58,11 +59,11 @@
                                 @endif
                             </div>
                             <div class="">
-                                <div class=" gap-10 mt-10">
+                                <div class=" gap-10 mt-10 overflow-hidden">
                                     <img src="/images/{{ $item->image }}" class=" w-[50rem]   border border-black/10"
                                         alt="">
-                                    <div class=" grid justify-stretch mt-10">
-                                        <p class=" capitalize  font-semibold break-words text-black/70">
+                                    <div class="  mt-10">
+                                        <p class=" capitalize  font-semibold text-black/70 block break-all ">
                                             {!! $item->deskripsi !!}</p>
                                     </div>
                                 </div>
@@ -119,12 +120,12 @@
                     </article>
                     @endforeach
                 </div>
-                <div class="lg:w-1/2 mt-10">
+                <div class=" lg:w-1/2 mt-10">
                     <form action="/comment/{{$item->id}}" method="post">
                         @csrf
                         <div class="lg:flex gap-5 w-full">
-                            <input type="text" name="name" class="border border-black/30 lg:w-2/6" placeholder="Nama">
-                            <input type="text" name="email" class="border-black/30 border max-md:mt-5 lg:w-4/6" placeholder="Email">
+                            <input type="text" name="name" class="border border-black/30 lg:w-2/6 w-full" placeholder="Nama">
+                            <input type="text" name="email" class="border-black/30 border max-md:mt-5 w-full lg:w-4/6" placeholder="Email">
                         </div>
                         <div class="">
                             <input type="text" name="comment" class=" h-80 mt-10 w-full placeholder:text-center"

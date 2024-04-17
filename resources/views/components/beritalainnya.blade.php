@@ -9,7 +9,7 @@
         @foreach ($data as $data)
             <div class="border grid  border-black/10 shadow-lg drop-shadow-lg pb-5 rounded-lg overflow-hidden">
                 <a href="/berita/{{ $data->slug }}"><img src="/images/{{ $data->image }}" alt=""
-                        class=" h-44 border border-black/10 shadow-none"></a>
+                        class="w-full h-44 border border-black/10 shadow-none"></a>
                 <div class=" grid px-2  gap-3 mt-3">
                     <a href="/berita/{{ $data->slug }}">
                         <p class="text-[#3E6E8B]  font-bold">{{ $data->judul }}</p>

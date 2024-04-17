@@ -1,11 +1,11 @@
 @extends('layout.main')
 @section('content')
-    <div class="w-full px-28 mt-20 mb-20">
+    <div class="w-full px-5 lg:px-28 mt-20 mb-20">
         <div class="flex justify-center text-center  font-semibold">
             <h1 class="text-4xl uppercase font-bold text-[#063A69]">Cek Laporan</h1>
         </div>
-        <div class="flex w-full gap-16 mt-10">
-            <div class=" w-2/4 ">
+        <div class="lg:flex w-full gap-16 mt-10">
+            <div class=" lg:w-2/4 ">
                 <div class=" w-full ">
                     <div class="mb-6">
                         <label for="email" class="block mb-2 text-sm font-semibold text-gray-700 dark:text-white">Kode

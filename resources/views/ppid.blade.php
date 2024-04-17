@@ -89,7 +89,7 @@
             </h2>
             <div id="accordion-flush-body-1" class="hidden" aria-labelledby="accordion-flush-heading-1">
                 <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                    <div class="mb-2 text-gray-500 dark:text-gray-400">{{$profile->deskripsi}}</div>
+                    <div class="mb-2 text-gray-500 dark:text-gray-400">{!!$profile->deskripsi!!}</div>
                 </div>
             </div>
             <h2 id="accordion-flush-heading-8">
@@ -107,7 +107,7 @@
             </h2>
             <div id="accordion-flush-body-8" class="hidden" aria-labelledby="accordion-flush-heading-8">
                 <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                    <div class="mb-2 text-gray-500 dark:text-gray-400">{{$tugas->deskripsi}}.</div>
+                    <div class="mb-2 text-gray-500 dark:text-gray-400">{!!$tugas->deskripsi!!}.</div>
                 </div>
             </div>
             <h2 id="accordion-flush-heading-2">
@@ -125,7 +125,7 @@
             </h2>
             <div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
                 <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                    <div class="mb-2 text-gray-500 dark:text-gray-400">{{$visi->deskripsi}}</div>
+                    <div class="mb-2 text-gray-500 dark:text-gray-400">{!!$visi->deskripsi!!}</div>
                 </div>
             </div>
             <h2 id="accordion-flush-heading-3">
@@ -143,10 +143,38 @@
             </h2>
             <div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-3">
                 <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">{{$misi->deskripsi}}</p>
+                    <p class="mb-2 text-gray-500 dark:text-gray-400">{!!$misi->deskripsi!!}</p>
                
                 </div>
             </div>
+            @php
+                $i = 4;
+            @endphp
+            @foreach ($ppid as $item)
+            <h2 id="accordion-flush-heading-{{$i}}">
+                <button type="button"
+                    class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
+                    data-accordion-target="#accordion-flush-body-{{$i}}" aria-expanded="false"
+                    aria-controls="accordion-flush-body-{{$i}}">
+                    <span class="text-xl text-[#063A69]">{{$item->judul}}</span>
+                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 5 5 1 1 5" />
+                    </svg>
+                </button>
+            </h2>
+            <div id="accordion-flush-body-{{$i}}" class="hidden" aria-labelledby="accordion-flush-heading-5">
+                <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                    <div class="mb-2 text-gray-500 dark:text-gray-400">{!!$item->link!!} </div>
+               
+                </div>
+            </div>
+            @php
+                $i++;
+            @endphp
+            @endforeach
+  
         </div>
 
     </div>

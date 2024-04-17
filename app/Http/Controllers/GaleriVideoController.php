@@ -15,6 +15,9 @@ class GaleriVideoController extends Controller
     public function index()
     {
         $video = GaleriVideo::paginate(15);
+        $title = 'Hapus Video!';
+        $text = "Apakah Anda Yakin Ingin Menghapus Video?";
+        confirmDelete($title, $text);
         return view('admin.galerivideo.index', compact('video'));
     }
 
@@ -69,8 +72,11 @@ class GaleriVideoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(GaleriVideo $galeriVideo)
+    public function destroy($id)
     {
-        //
+        $galeriVideo = GaleriVideo::findOrFail($id);
+        $galeriVideo->delete();
+        Alert::success('Berhasil', 'Berhasil Menghapus Berita');
+        return redirect('/admin/galerivideo');
     }
 }

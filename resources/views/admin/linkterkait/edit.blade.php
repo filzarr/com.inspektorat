@@ -4,7 +4,7 @@
     <section class="bg-white dark:bg-gray-900 mt-5 ">
         <div class="max-w-2xl  py-10 mx-auto lg:py-16">
             <h2 class="mb-4 text-3xl  font-bold text-gray-900 dark:text-white text-center">Tambahkan Link Terkait</h2>
-            <form action="/admin/linkterkait/{{$berita->id}}" method="POST" enctype="multipart/form-data">
+            <form action="/admin/linkterkait/{{$linkterkait->id}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PATCH')
                 <div class="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">

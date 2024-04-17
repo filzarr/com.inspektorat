@@ -54,15 +54,23 @@ class IrbanController extends Controller
      */
     public function create($irban)
     {
-        //
+        return view('admin.irban.irban1.create', compact('irban'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, $irban)
     {
-        //
+        $input = [
+            'jenis' => $request->jenis,
+            'deskripsi' => $request->deskripsi,
+            'irban' => $irban,
+        ];
+        Irban::create($input);
+        Alert::success('Berhasil', 'Berhasil Menambahkan Tampilan');
+        $url = '/admin/irban/'.$irban;
+        return redirect($url);
     }
 
     /**
@@ -113,8 +121,12 @@ class IrbanController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request)
     {
-        //
+        $irban = Irban::findOrFail($request->id);
+        $irban->delete();
+        $url = "/admin/irban/".$request->irban;
+        Alert::success('Berhasil', 'Berhasil Menghapus Berita');
+        return redirect($url);
     }
 }

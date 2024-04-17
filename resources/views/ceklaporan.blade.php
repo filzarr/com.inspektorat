@@ -2,11 +2,11 @@
 @section('content')
     <form action="/cek-laporan" method="post">
         @csrf
-        <div class="w-full px-28 mt-20 mb-20">
+        <div class="w-full px-5 lg:px-28 mt-20 mb-20">
             <div class="flex justify-center text-center  font-semibold">
-                <h1 class="text-4xl uppercase font-bold text-[#063A69]">Cek Laporan Anda</h1>
+                <h1 class="text-xl lg:text-4xl uppercase font-bold text-[#063A69]">Cek Laporan Anda</h1>
             </div>
-            <div class=" w-1/3 mt-10">
+            <div class=" w-full lg:w-1/3 mt-10">
                 <div class="mb-6">
                     <label for="email" class="block mb-2 text-sm font-semibold text-gray-700 dark:text-white">Masukkan Kode Laporan</label>
                     <input type="text" id="email" name="kode"

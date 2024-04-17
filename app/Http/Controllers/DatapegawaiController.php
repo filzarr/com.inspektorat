@@ -59,7 +59,8 @@ class DatapegawaiController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = Datapegawai::findOrFail($id);
+        return view('admin.datapegawai.edit', compact('data'));
     }
 
     /**
@@ -67,7 +68,14 @@ class DatapegawaiController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $input = [
+            'nama' =>$request->nama,
+            'jumlah' => $request->jumlah,
+       
+        ];
+        Datapegawai::where('id', $id)->update($input);
+        Alert::success('Berhasil', 'Berhasil Mengupdate Data Pegawai');
+        return redirect('/admin/datapegawai');
     }
 
     /**

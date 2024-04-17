@@ -44,7 +44,7 @@
                         <tr class="border-b dark:border-gray-700">
                             <th scope="row"
                                 class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$item->judul}}</th>
-                            <td class="px-4 py-3"><a href="{{$item->link}}" target="_blank">{{$item->link}}</a></td>
+                            <td class="px-4 py-3">{!! $item->link !!}</td>
                             <td class="px-4 py-3">100</td>
                             <td class="px-4 py-3">4</td>
                             <td class="px-4 py-3">10 November 2023</td>

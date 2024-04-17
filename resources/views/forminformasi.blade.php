@@ -1,10 +1,10 @@
 @extends('layout.main')
 @section('content')
-    <div class="w-full px-28 mt-20 mb-20">
+    <div class="w-full px-5 lg:px-28 mt-20 mb-20">
         <div class="flex justify-center text-center  font-semibold">
-            <h1 class="text-4xl uppercase font-bold text-[#063A69]">Form Pengajuan Informasi</h1>
+            <h1 class="txt-xl lg:text-4xl uppercase font-bold text-[#063A69]">Form Pengajuan Informasi</h1>
         </div>
-        <div class=" w-2/3 mt-10">
+        <div class="w-full lg:w-2/3 mt-10">
 
             <form class="/forminformasi" method="post">
                 @csrf

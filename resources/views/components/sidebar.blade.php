@@ -1,3 +1,14 @@
+<style>
+    #side::-webkit-scrollbar{
+     
+        display: none;
+
+    }
+    #side{
+        -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+    }
+</style>
 <nav class="fixed top-0 z-50 w-full bg-[#214E6D] border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
     <div class="px-3 py-3 lg:px-5 lg:pl-3">
         <div class="flex items-center justify-between">
@@ -73,7 +84,7 @@
 <aside id="logo-sidebar"
     class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-[#214E6D] border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
     aria-label="Sidebar">
-    <div class="h-full px-3 pb-4 overflow-y-auto bg-[#214E6D] dark:bg-gray-800">
+    <div class="h-full px-3 pb-4 overflow-y-auto bg-[#214E6D] dark:bg-gray-800" id="side">
         <ul class="space-y-2 font-medium">
             <li>
                 <a href="/admin"
@@ -86,6 +97,16 @@
                             d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
                     </svg>
                     <span class="ml-3">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/vidiokegiatan"
+                    class="flex items-center  p-2 text-gray-100 rounded-lg dark:text-white hover:bg-[#13345B] dark:hover:bg-gray-700 group">
+                    <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-play-circle w-5 h-5" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"/>
+                      </svg>
+                    <span class="ml-3">Video kegiatan</span>
                 </a>
             </li>
             <li>

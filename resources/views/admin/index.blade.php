@@ -94,7 +94,7 @@
                         </a>
                     </div>
                     <div class=""><span class="text-xs px-3 py-1 text-gray-100 rounded-2xl bg-gray-700">{{$c->keterangan}}</span></div>
-                    <div class=" text-xs font-medium text-gray-500">{{$c->deskripsi}}</div>
+                    <div class=" text-xs font-medium text-gray-500">{!!$c->deskripsi!!}</div>
                 </div>
                 @endforeach
           
@@ -135,7 +135,7 @@
                     yAxes: [{
                         ticks: {
                             min: 0,
-                            max: 10000
+                            max: 5000
                         }
                     }],
                 }

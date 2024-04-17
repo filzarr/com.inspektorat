@@ -1,13 +1,13 @@
 @extends('layout.main')
 @section('content')
-    <div class="w-full px-28 mt-20 mb-20">
+    <div class="w-full px-5 lg:px-28 mt-20 mb-20">
         <div class="flex justify-center text-center  font-semibold">
-            <h1 class="text-4xl uppercase font-bold text-[#063A69]">Daftar {{ $jenis === "informasi-publik" ? "Informasi Publik" : "Informasi Berkala" }} </h1>
+            <h1 class=" text-xl lg:text-4xl uppercase font-bold text-[#063A69]">Daftar {{ $jenis === "informasi-publik" ? "Informasi Publik" : "Informasi Berkala" }} </h1>
         </div>
 
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-10">
             <table class="w-full  text-left text-gray-500 dark:text-gray-400">
-                <thead class="text-lg text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <thead class=" text-sm lg:text-lg text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" class="px-6 py-3">
                             No.
