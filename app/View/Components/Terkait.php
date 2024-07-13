@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 use App\Models\Linkterkait;
-class terkait extends Component
+class Terkait extends Component
 {
     /**
      * Create a new component instance.
@@ -19,8 +19,8 @@ class terkait extends Component
     /**
      * Get the view / contents that represent the component.
      */
-    public function render(): View|Closure|string
+    public function render(): View
     {  $link = Linkterkait::get();
-        return view('components.terkait', compact('link'));
+        return view('components.Terkait', compact('link'));
     }
 }

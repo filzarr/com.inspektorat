@@ -13,7 +13,7 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $menu = Menu::get();
+        $menu = Menu::paginate(5);
         $title = 'Hapus Menu!';
         $text = "Apakah Anda Yakin Ingin Menghapus Menu?";
         confirmDelete($title, $text);
