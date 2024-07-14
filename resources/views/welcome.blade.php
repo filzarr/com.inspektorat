@@ -22,112 +22,11 @@
         }
     </style>
 
-
-
-<!-- <button data-modal-target="staticModal" id="awal" data-modal-toggle="staticModal"
-              class="hidden text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-              type="button">
-              Toggle modal
-          </button>
-
-          <div id="staticModal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
-              class="fixed top-0 left-0 right-0 z-50 hidden   p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-              <div class="relative   max-h-full">
-                  <div class="relative w-5xl bg-white rounded-b overflow-hidden rounded-lg shadow dark:bg-gray-700">
-                      <div class="flex items-start justify-between p-4   rounded dark:border-gray-600">
-                          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                          Roadshow Bus KPK 2023
-                          </h3>
-                          <button type="button"
-                              class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                              data-modal-hide="staticModal">
-                              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                  viewBox="0 0 14 14">
-                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                              </svg>
-                              <span class="sr-only">Close modal</span>
-                          </button>
-                      </div>
-                      <div class=" rounded-b p-3">
-                          <img src="/images/20231018093839.gif" alt="this slowpoke moves"   class="w-full" />
-                            
-                      </div>
-                
-                      
-                  </div>
-              </div>
-          </div> -->
-    <!-- Modal toggle -->
-
-
-    <!-- Main modal -->
-
-    <div id="default-carousel" class="relative w-full    max-sm:h-60" data-carousel="slide">
-        <!-- Carousel wrapper -->
-        <div class="relative h-60 overflow-hidden  md:h-[35rem]">
-            <!-- Item 1 -->
-            @foreach ($banner as $item)
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="/images/{{ $item->image }}"
-                        class=" brightness-50  absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                        alt="...">
-                    <div class=" absolute md:left-56 max-sm:left-14  max-sm:top-28 md:top-56">
-                        <p class=" text-white text-[10px]  md:text-3xl  font-semibold md:w-[30rem]">{{ $item->judul }}</p>
-                        <a href="/banner/{{ $item->slug }}">
-                            <button
-                                class=" bg-cyan-700 p-2 mt-3 font-medium rounded-md text-white text-xs md:text-lg">Selengkapnya</button>
-                        </a>
-                    </div>
-                </div>
-            @endforeach
-            <!-- Item 2 -->
-
-
-        </div>
-        <!-- Slider indicators -->
-        <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
-                data-carousel-slide-to="0"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
-                data-carousel-slide-to="1"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
-                data-carousel-slide-to="2"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
-                data-carousel-slide-to="3"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
-                data-carousel-slide-to="4"></button>
-        </div>
-        <!-- Slider controls -->
-        <button type="button"
-            class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-            data-carousel-prev>
-            <span
-                class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
-                    </path>
-                </svg>
-                <span class="sr-only">Previous</span>
-            </span>
-        </button>
-        <button type="button"
-            class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-            data-carousel-next>
-            <span
-                class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-                <span class="sr-only">Next</span>
-            </span>
-        </button>
-    </div>
+ 
+    <x-carousel></x-carousel>
     <div class="w-full md:mt-20 mt-10 px-5 md:px-28">
-        <div class="md:flex  justify-between gap-10">
-            <div class=" max-sm:w-full  md:w-3/6">
+        <div class="lg:flex  justify-between space-y-10 gap-10">
+            <div class=" max-sm:w-full  lg:w-3/6">
                 <div class="flex justify-start">
                     <p class=" max-sm:text-xl md:text-4xl uppercase font-bold text-[#3E6E8B]">Berita Terkini</p>
                 </div>
@@ -162,7 +61,7 @@
 
 
                 </div>
-                <a href="/berita" class=" lg:hidden block">
+                <a href="/berita" class="  mt-5">
                     <div class="flex justify-start max-sm:mt-10 max-sm:mb-10">
                         <p
                             class=" font-semibold text-[#3E6E8B] text-xl hover:underline duration-500  translate-x-0 hover:translate-x-1 ease-out ">
@@ -170,7 +69,7 @@
                     </div>
                 </a>
             </div>
-            <div class="md:w-2/6    md:px-10 block">
+            <div class="lg:w-2/6    md:px-10 block">
                 <div class="w-full   border-2 border-black/5 bg-[#EFEFF0] px-5 py-3 rounded-md">
                     <div class="w-full bg-[#214E6D] px-0 sm:px-5 flex justify-center py-3 font-bold text-[#EFEFF0]">
                         Inpektur
@@ -187,19 +86,12 @@
                             class="w-full border-black/30 shadow-lg rounded-sm placeholder:text-center mt-3 h-12"
                             placeholder="Masukkan email ">
                         <button class=" bg-blue-500 text-white w-full mt-5 py-3 font-semibold">Submit</button>
-                    </div>
-                    <!-- <x-Arsipkegiatan></x-Arsipkegiatan> -->
+                    </div> 
                 </div>
             </div>
-
+           
         </div>
-        <a href="/berita" class="hidden lg:block">
-            <div class="flex justify-start max-sm:mt-10 max-sm:mb-10">
-                <p
-                    class=" font-semibold text-[#3E6E8B] text-xl hover:underline duration-500  translate-x-0 hover:translate-x-1 ease-out ">
-                    Lihat Berita Lainnya</p>
-            </div>
-        </a>
+
     </div>
 
     <div class="w-full mt-10 md:px-28 px-5 py-10 bg-[#EFEFF0]">
@@ -228,8 +120,8 @@
                             </figcaption>
                         @endif
                         <a href="/agenda/{{ $item->slug }}">
-                            <img class="rounded-lg scale-100 hover:scale-125 duration-700"
-                                src="/images/{{ $item->image }}" alt="image description">
+                            <img class="rounded-lg scale-100 hover:scale-125 duration-700" src="/images/{{ $item->image }}"
+                                alt="image description">
                         </a>
                         <figcaption class="absolute px-4 text-lg text-white bottom-6">
                             <p class="text-sm"> {{ \Carbon\Carbon::parse($item->created_at)->format('d M Y') }}</p>
@@ -260,16 +152,6 @@
 
         <div class="grid md:grid-cols-5 gap-2 max-sm:mx-10 mt-10">
             @foreach ($galerifoto as $item)
-                <!-- <div class=" flip-box">
-                                    <div class=" flip-box-inner">
-                                        <div class=" flip-box-front">
-                                            <img class="h-auto max-w-full rounded-lg" src="/images/{{ $item->image }}" alt="">
-                                        </div>
-                                        <div class="hidden flip-box-back">
-                                            <h2>{{ $item->deskripsi }}</h2>
-                                        </div>
-                                    </div>
-                                </div> -->
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
@@ -313,9 +195,7 @@
                     <div id="{{ $item->id }}" tabindex="-1" aria-hidden="true"
                         class="fixed z-50 top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
                         <div class="relative w-full max-w-2xl max-h-full">
-                            <!-- Modal content -->
                             <div class="relative  bg-transparent  dark:bg-gray-700">
-                                <!-- Modal header -->
                                 <div class="flex items-start justify-between p-4 brounded-t ">
 
                                     <button type="button"
@@ -329,7 +209,6 @@
                                         <span class="sr-only">Close modal</span>
                                     </button>
                                 </div>
-                                <!-- Modal body -->
                                 <iframe src="https://drive.google.com/file/d/{{ $item->links }}/preview"
                                     class=" w-full h-96" allow="autoplay"></iframe>
                             </div>
@@ -371,7 +250,7 @@
         </div>
     </div>
 
-    
+
 
 
     <button data-modal-target="staticModal" id="modalEl" data-modal-toggle="staticModal"
@@ -379,14 +258,10 @@
         type="button">
         Toggle modal
     </button>
-
-    <!-- Main modal -->
     <div id="staticModal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
         class="fixed top-0 left-0 right-0 z-50 hidden   p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative   max-h-full">
-            <!-- Modal content -->
             <div class="relative w-5xl bg-white rounded-b overflow-hidden rounded-lg shadow dark:bg-gray-700">
-                <!-- Modal header -->
                 <div class="flex items-start justify-between p-4   rounded dark:border-gray-600">
                     <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
                         {{ $popup->judul }}
@@ -402,7 +277,6 @@
                         <span class="sr-only">Close modal</span>
                     </button>
                 </div>
-                <!-- Modal body -->
                 <div class=" rounded-b p-3">
                     <img src="/images/{{ $popup->image }}" alt="this slowpoke moves" class="w-full" />
 
@@ -412,5 +286,4 @@
             </div>
         </div>
     </div>
-
 @endsection

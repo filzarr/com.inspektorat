@@ -13,14 +13,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon" href={{ url('logo_inspektorat.png') }} type="image/icon type">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&display=swap" rel="stylesheet">
     <!-- Styles -->
-    
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
     <style>
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Public Sans', sans-serif;
         }
 
         .flip-card {
@@ -81,13 +80,33 @@
     <x-Navbar></x-Navbar>
     @yield('content')
     @include('components.footer')
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <script lang="javascript">
         window.onload = function() {
-        
+
             document.getElementById('modalEl').click();
         };
+        document.addEventListener('DOMContentLoaded', function() {
+       
+            console.log(window.location.href);
+            const navbar = document.getElementById('navbar');
+            const carousel = document.getElementById('carousel');
+            if (window.location.pathname === '/') {
+                navbar.classList.add('bg-transparent');
+            } 
+            else{
+                navbar.classList.add('bg-white');
+            }
+            window.addEventListener('scroll', function() {
+                const carouselHeight = carousel.offsetHeight;
+                if (window.scrollY > carouselHeight) {
+                    navbar.classList.add('bg-white');
+                } else {
+                    navbar.classList.remove('bg-white');
+                }
+            });
+        });
     </script>
 </body>
 

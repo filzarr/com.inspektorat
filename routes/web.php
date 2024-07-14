@@ -22,7 +22,7 @@ use App\Http\Controllers\VidioKegiatanController;
 
 // GENERAL
 Route::controller(DashboardController::class)->group(function () {
-    Route::get('/', 'index');
+    Route::get('/', 'index')->name('home');
     Route::get('/menu/{judul}', 'menu');
     Route::get('/berita/{slug}', 'detailberita');
     Route::get('/banner/{slug}', 'banner');

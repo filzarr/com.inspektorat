@@ -50,7 +50,7 @@ class DashboardController extends Controller
     public function index(){
         $berita = Berita::Orderby('created_at', 'desc')->limit(6)->get();
         $popup = popup::first();
-        $banner = Banner::Orderby('created_at', 'desc')->get();
+        
         $datapegawai = Datapegawai::get();
         $galerifoto = Galerifoto::Orderby('created_at', 'desc')->get();
         $agenda = Agenda::Orderby('created_at', 'desc')->get();
@@ -58,7 +58,7 @@ class DashboardController extends Controller
         $agent = new Agent();
         $video = GaleriVideo::get();
         // dd($agent->isMobile());
-        return view('welcome', compact('berita','banner', 'datapegawai','galerifoto','agenda','video','agent','popup'));
+        return view('welcome', compact('berita',  'datapegawai','galerifoto','agenda','video','agent','popup'));
     }
     public function detailberita($slug){
          $berita = Berita::where('slug',$slug)->with('comments')->limit(1)->get();

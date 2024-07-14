@@ -1,4 +1,11 @@
 @extends('layout.admin')
+@push('css')
+    @livewireStyles
+@endpush
+@push('js')
+    @livewireScripts
+    {{-- <script src="/livewire/livewire.js"></script> --}}
+@endpush
 @section('content')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/datepicker.min.js"></script>
     <section class="bg-white dark:bg-gray-900 mt-5 ">
@@ -38,14 +45,14 @@
                         <label for="description"
                             class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Deskripsi</label>
                             <input id="description" type="hidden" name="deskripsi">
-                            <trix-editor input="description" ></trix-editor>
+                            <livewire:post></livewire:post>
                             @error('deskripsi')
                             <p class="mt-2 text-sm text-red-600 dark:text-red-500 capitalize"><span class="">*{{ $message }}</p>
                             @enderror
                     </div>
                     <div class="">
 
-                        <label class="block mb-2 text-lg font-medium text-gray-900 dark:text-white" for="file_input">Masukkan Foto</label>
+                        <label class="block mb-2 text-lg font-medium text-gray-900 dark:text-white" for="file_input">Masukkan Thumbnail Berita</label>
                         <input
                             class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                             aria-describedby="file_input_help" id="file_input" type="file" name="image">
@@ -66,4 +73,5 @@
             </form>
         </div>
     </section>
+
 @endsection

@@ -26,6 +26,7 @@
                 <option value="profile" selected>Profile</option>
                 <option value="program">Program</option>
                 <option value="laporan">Laporan</option>
+                <option value="regulasi">Regulasi</option>
                 <option value="irban1 ">Irban 1 </option> 
                 <option value="irban2">Irban 2 </option> 
                 <option value="irban3">Irban 3</option> 
