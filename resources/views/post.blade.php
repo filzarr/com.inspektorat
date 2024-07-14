@@ -7,7 +7,7 @@
      
     </style>
     <div class="w-full mt-5 px-5 lg:px-10 mb-10">
-        <div class="py-10 bg-white px-5 lg:px-10 border-2 rounded-lg border-gray-200">
+        <div class="py-20 bg-white px-5 lg:px-10 border-2 rounded-lg border-gray-200">
             <div class="bg-white">
                 @foreach ($berita as $item)
                     <div class="lg:flex justify-between gap-5">
