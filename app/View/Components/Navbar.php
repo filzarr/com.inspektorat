@@ -30,6 +30,7 @@ class navbar extends Component
         $irban4 = Menu::where('gm', 'irban4')->get();
         $irbansus = Menu::where('gm', 'irbansus')->get();
         $gratifikasi = Menu::where('gm', 'gratifikasi')->get();
-        return view('components.navbar', compact('profile', 'program','laporan','irban1','irban2','irban3','irban4','irbansus','gratifikasi'));
+        $regulasi = Menu::where('gm', 'regulasi')->get();
+        return view('components.navbar', compact('profile', 'program','laporan','irban1','irban2','irban3','irban4','irbansus','gratifikasi','regulasi'));
     }
 }
