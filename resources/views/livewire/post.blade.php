@@ -1,7 +1,7 @@
  
 <link href="{{ asset('ckeditor/plugins/codesnippet/lib/highlight/styles/default.css') }}" rel="stylesheet">
 <div class="" wire:ignore>
-    <textarea name="deskripsi" wire:model="deskripsi" id="editor" cols="30" rows="10"></textarea>
+    <textarea name="deskripsi" wire:model="deskripsi" id="editor" cols="30" rows="10">{!!$this->deskripsi!!}</textarea>
 </div>
 <script>
     ClassicEditor

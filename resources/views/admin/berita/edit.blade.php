@@ -32,7 +32,7 @@
                         <label for="description"
                             class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Deskripsi</label>
                             <input id="description" type="hidden" name="deskripsi">
-                            <trix-editor input="description" >{!!$berita->deskripsi!!}</trix-editor>
+                           <livewire:post :deskripsi="$berita->deskripsi"></livewire:post>
                     </div>
                     <div class="">
                         <img src="/images/{{$berita->image}}" class="w-20 h-20" alt="">
