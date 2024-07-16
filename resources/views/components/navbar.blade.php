@@ -19,7 +19,7 @@
                 <div
                     class=" text-[12px] border-2 left-0 z-10 shadow-md border-[#d1d1d1] border-collapse hidden group-hover:flex absolute flex-col min-w-[200px] bg-white">
                     @foreach ($profile as $item)
-                        <a href="/menu/{{ $item->slug }}"
+                        <a href="/menu/{{ $item->slug }}" target="_blank"
                             class="lowercase px-4 py-2  border-b-2 border-[#d1d1d1] hover:border-[#214E6D] hover:bg-[#214E6D] transition-all duration-75 ease-in hover:text-white border-collapse {{ Request::is('menu/' . $item->slug) ? 'border-[#214E6D] active  bg-[#214E6D] transition-all duration-75 ease-in  text-white' : '' }}">{{ $item->judul }}</a>
                     @endforeach
                 </div>
@@ -29,7 +29,7 @@
                 <div
                     class=" text-[12px] border-2 left-0 z-10 shadow-md border-[#d1d1d1] border-collapse hidden group-hover:flex absolute flex-col min-w-[200px] bg-white">
                     @foreach ($gratifikasi as $item)
-                        <a href="/menu/{{ $item->slug }}"
+                        <a href="/menu/{{ $item->slug }}" target="_blank"
                             class="lowercase px-4 py-2  border-b-2 border-[#d1d1d1] hover:border-[#214E6D] hover:bg-[#214E6D] transition-all duration-75 ease-in hover:text-white border-collapse {{ Request::is('menu/' . $item->slug) ? 'border-[#214E6D] active  bg-[#214E6D] transition-all duration-75 ease-in  text-white' : '' }}">{{ $item->judul }}</a>
                     @endforeach
                 </div>
@@ -39,7 +39,7 @@
                 <div
                     class=" text-[12px] border-2 left-0 z-10 shadow-md border-[#d1d1d1] border-collapse hidden group-hover:flex absolute flex-col min-w-[200px] bg-white">
                     @foreach ($program as $item)
-                        <a href="/menu/{{ $item->slug }}"
+                        <a href="/menu/{{ $item->slug }}" target="_blank"
                             class="lowercase px-4 py-2  border-b-2 border-[#d1d1d1] hover:border-[#214E6D] hover:bg-[#214E6D] transition-all duration-75 ease-in hover:text-white border-collapse {{ Request::is('menu/' . $item->slug) ? 'border-[#214E6D] active  bg-[#214E6D] transition-all duration-75 ease-in  text-white' : '' }}">{{ $item->judul }}</a>
                     @endforeach
                 </div>
@@ -49,7 +49,7 @@
                 <div
                     class=" text-[12px] border-2 left-0 z-10 shadow-md border-[#d1d1d1] border-collapse hidden group-hover:flex absolute flex-col min-w-[200px] bg-white">
                     @foreach ($laporan as $item)
-                        <a href="/menu/{{ $item->slug }}"
+                        <a href="/menu/{{ $item->slug }}" target="_blank"
                             class="lowercase px-4 py-2  border-b-2 border-[#d1d1d1] hover:border-[#214E6D] hover:bg-[#214E6D] transition-all duration-75 ease-in hover:text-white border-collapse {{ Request::is('menu/' . $item->slug) ? 'border-[#214E6D] active  bg-[#214E6D] transition-all duration-75 ease-in  text-white' : '' }}">{{ $item->judul }}</a>
                     @endforeach
                 </div>
@@ -65,7 +65,7 @@
                         <div
                             class="text-[12px] border-2  top-0 right-[-200px] z-10 shadow-md border-[#d1d1d1] border-collapse hidden group-hover/baru:flex absolute flex-col min-w-[200px] bg-white">
                             @foreach ($irban1 as $item)
-                                <a href="/menu/{{ $item->slug }}"
+                                <a href="/menu/{{ $item->slug }}" target="_blank"
                                     class="lowercase px-4 py-2  border-b-2 border-[#d1d1d1] hover:border-[#214E6D] hover:bg-[#214E6D] transition-all duration-75 ease-in hover:text-white  border-collapse">{{ $item->judul }}</a>
                             @endforeach
 
@@ -77,7 +77,7 @@
                         <div
                             class="text-[12px] border-2  top-0 right-[-200px] z-10 shadow-md border-[#d1d1d1] border-collapse hidden group-hover/baru:flex absolute flex-col min-w-[200px] bg-white">
                             @foreach ($irban2 as $item)
-                                <a href="/menu/{{ $item->slug }}"
+                                <a href="/menu/{{ $item->slug }}" target="_blank"
                                     class="px-4 py-2  border-b-2 border-[#d1d1d1] hover:border-[#214E6D] hover:bg-[#214E6D] transition-all duration-75 ease-in hover:text-white  border-collapse">{{ $item->judul }}</a>
                             @endforeach
 
@@ -89,7 +89,7 @@
                         <div
                             class="text-[12px] border-2  top-0 right-[-200px] z-10 shadow-md border-[#d1d1d1] border-collapse hidden group-hover/baru:flex absolute flex-col min-w-[200px] bg-white">
                             @foreach ($irban3 as $item)
-                                <a href="/menu/{{ $item->slug }}"
+                                <a href="/menu/{{ $item->slug }}" target="_blank"
                                     class="px-4 py-2  border-b-2 border-[#d1d1d1] hover:border-[#214E6D] hover:bg-[#214E6D] transition-all duration-75 ease-in hover:text-white  border-collapse">{{ $item->judul }}</a>
                             @endforeach
 
@@ -101,7 +101,7 @@
                         <div
                             class="text-[12px] border-2  top-0 right-[-200px] z-10 shadow-md border-[#d1d1d1] border-collapse hidden group-hover/baru:flex absolute flex-col min-w-[200px] bg-white">
                             @foreach ($irban4 as $item)
-                                <a href="/menu/{{ $item->slug }}"
+                                <a href="/menu/{{ $item->slug }}" target="_blank"
                                     class="px-4 py-2  border-b-2 border-[#d1d1d1] hover:border-[#214E6D] hover:bg-[#214E6D] transition-all duration-75 ease-in hover:text-white  border-collapse">{{ $item->judul }}</a>
                             @endforeach
 
@@ -113,7 +113,7 @@
                         <div
                             class="text-[12px] border-2  top-0 right-[-200px] z-10 shadow-md border-[#d1d1d1] border-collapse hidden group-hover/baru:flex absolute flex-col min-w-[200px] bg-white">
                             @foreach ($irban4 as $item)
-                                <a href="/menu/{{ $item->slug }}"
+                                <a href="/menu/{{ $item->slug }}" target="_blank"
                                     class="px-4 py-2  border-b-2 border-[#d1d1d1] hover:border-[#214E6D] hover:bg-[#214E6D] transition-all duration-75 ease-in hover:text-white  border-collapse">{{ $item->judul }}</a>
                             @endforeach
 
@@ -135,7 +135,7 @@
                 <div
                     class=" text-[12px] border-2 left-0 z-10 shadow-md border-[#d1d1d1] border-collapse hidden group-hover:flex absolute flex-col min-w-[200px] bg-white">
                     @foreach ($regulasi as $item)
-                        <a href="/menu/{{ $item->slug }}"
+                        <a href="/menu/{{ $item->slug }}" target="_blank"
                             class=" lowercase px-4 py-2  border-b-2 border-[#d1d1d1] hover:border-[#214E6D] hover:bg-[#214E6D] transition-all duration-75 ease-in hover:text-white border-collapse {{ Request::is('menu/' . $item->slug) ? 'border-[#214E6D] active  bg-[#214E6D] transition-all duration-75 ease-in  text-white' : '' }}">{{ $item->judul }}</a>
                     @endforeach
                 </div>

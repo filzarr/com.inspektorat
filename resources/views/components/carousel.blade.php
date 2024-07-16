@@ -3,7 +3,7 @@
         <div class=" min-h-[100px]  xl:min-h-full min-w-full">
             @foreach ($banner as $item)
                 <img src="{{ url('images/' . $item->image) }}"
-                    class="carousel-image max-h-[800px]  h-[250px] lg:h-full  transition-all duration-150 ease-in brightness-50 group-hover:brightness-100 min-w-full object-cover object-center"
+                    class="carousel-image max-h-[700px]  h-[250px] lg:h-full  transition-all duration-150 ease-in brightness-50 group-hover:brightness-100 min-w-full object-cover object-center"
                     alt="">
             @endforeach
         </div>
