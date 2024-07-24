@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
     <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="icon" href={{ url('logo_inspektorat.png') }} type="image/icon type">
+    <link rel="icon" href="https://inspektorat.sumutprov.go.id/images/logo_inspektorat.png" type="image/icon type">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&display=swap" rel="stylesheet">
     <!-- Styles -->

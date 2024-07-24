@@ -3,7 +3,7 @@
     <nav class="flex justify-between items-center p-4 rounded-lg   transition-all duration-100 ease-in hover:bg-white      shadow-md"
         id="navbar">
         <a href="/" class="flex gap-2 items-center" id="nav-logo">
-            <img src="{{ url('logo_inspektorat.png') }}" class="h-[30px] w-[30px] lg:h-[50px] lg:w-[50px]"
+            <img src="/images/logo_inspektorat.png" class="h-[30px] w-[30px] lg:h-[50px] lg:w-[50px]"
                 alt="Logo Inspektorat Provinsi Sumatera Utara">
             <div class=" space-y-0">
                 <p class=" font-bold text-[#322C2B] text-sm lg:text-base">Inspektorat</p>

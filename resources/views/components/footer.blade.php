@@ -2,7 +2,7 @@
 
 <footer class="px-[8px] py-[32px] sm:px-[16px]  md:px-[32px] lg:px-[64px] xl:px-[128px] space-y-[24px] bg-[#2980B9]">
     <header class="flex gap-2">
-        <img src="https://inspektorat.sumutprov.go.id/logo_inspektorat.png" class="h-[30px] w-[30px] lg:h-[50px] lg:w-[50px]"
+        <img src="/images/logo_inspektorat.png" class="h-[30px] w-[30px] lg:h-[50px] lg:w-[50px]"
             alt="Logo Inspektorat Provinsi Sumatera Utara">
         <div class=" space-y-0">
             <p class=" font-bold text-[#ffffff] text-sm lg:text-base">Inspektorat <br> Provinsi Sumatera Utara</p> 
