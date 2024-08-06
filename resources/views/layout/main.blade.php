@@ -15,6 +15,8 @@
     <link rel="icon" href="https://inspektorat.sumutprov.go.id/images/logo_inspektorat.png" type="image/icon type">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://inspektorat.sumutprov.go.id/images/app-df75e5ff.css" rel="stylesheet">
+    <link href="https://inspektorat.sumutprov.go.id/images/app-e9fa4e0e.js" rel="stylesheet">
     <!-- Styles -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 

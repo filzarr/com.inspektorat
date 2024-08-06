@@ -53,8 +53,7 @@ class DashboardController extends Controller
         
         $datapegawai = Datapegawai::get();
         $galerifoto = Galerifoto::Orderby('created_at', 'desc')->get();
-        $agenda = Agenda::Orderby('created_at', 'desc')->get();
-        Pengunjung::create();
+        $agenda = Agenda::Orderby('created_at', 'desc')->get(); 
         $agent = new Agent();
         $video = GaleriVideo::get();
         // dd($agent->isMobile());
