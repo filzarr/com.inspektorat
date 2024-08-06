@@ -2,30 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Linkterkait;
-use App\Models\Berita;
-use App\Models\Banner;
-use App\Models\Datapegawai;
-use App\Models\Galerifoto;
-use App\Models\GaleriVideo;
-use App\Models\Irban;
+use Redirect;
+use Carbon\Carbon;
+use App\Models\Menu;
 use App\Models\Ppid;
-use App\Models\tampilansaberpungli;
+use App\Models\Irban;
+use App\Models\popup;
+use App\Models\Agenda;
+use App\Models\Banner;
+use App\Models\Berita;
+use App\Models\Comments;
+use App\Models\Galerifoto;
+use App\Models\Pengunjung;
+use App\Models\Agendairban;
+use App\Models\Datapegawai;
+use App\Models\GaleriVideo;
+use App\Models\Linkterkait;
+use Jenssegers\Agent\Agent;
 use App\Models\tampilanppid;
+use Illuminate\Http\Request;
 use App\Models\Laporaninformasi;
 use App\Models\Laporankeberatan;
-use App\Models\Agendairban;
-use App\Models\Agenda;
-use App\Models\Comments;
-use Carbon\Carbon;
-use App\Models\popup;
-use App\Models\Menu;
-use Redirect;
-use Jenssegers\Agent\Agent;
 Use Alert;
-use App\Models\Pengunjung;
+use App\Models\tampilansaberpungli;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Pagination\CursorPaginator;
+
 class DashboardController extends Controller
 {
     public function menu($slug){
@@ -48,14 +50,31 @@ class DashboardController extends Controller
         return redirect()->back();
     }
     public function index(){
-        $berita = Berita::Orderby('created_at', 'desc')->limit(6)->get();
-        $popup = popup::first();
-        
-        $datapegawai = Datapegawai::get();
-        $galerifoto = Galerifoto::Orderby('created_at', 'desc')->get();
-        $agenda = Agenda::Orderby('created_at', 'desc')->get(); 
+        $berita = Cache::remember('berita', 60, function () {
+            return Berita::orderBy('created_at', 'desc')->limit(6)->get();
+        });
+    
+        $popup = Cache::remember('popup', 60, function () {
+            return Popup::first();
+        });
+    
+        $datapegawai = Cache::remember('datapegawai', 60, function () {
+            return Datapegawai::all();
+        });
+    
+        $galerifoto = Cache::remember('galerifoto', 60, function () {
+            return Galerifoto::orderBy('created_at', 'desc')->get();
+        });
+    
+        $agenda = Cache::remember('agenda', 60, function () {
+            return Agenda::orderBy('created_at', 'desc')->get();
+        });
+    
+        $video = Cache::remember('video', 60, function () {
+            return GaleriVideo::all();
+        });
+    
         $agent = new Agent();
-        $video = GaleriVideo::get();
         // dd($agent->isMobile());
         return view('welcome', compact('berita',  'datapegawai','galerifoto','agenda','video','agent','popup'));
     }
