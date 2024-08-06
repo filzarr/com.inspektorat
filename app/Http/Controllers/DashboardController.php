@@ -31,8 +31,10 @@ use Illuminate\Pagination\CursorPaginator;
 class DashboardController extends Controller
 {
     public function menu($slug){
-        $menu = Menu::where('slug', $slug)->first();
-        return view('menu', compact('menu'));
+        $menu = Menu::where('slug', $slug)->first(); 
+        $pageTitle = "";
+        $pageTitle = $menu->judul;
+        return view('menu', compact('menu', 'pageTitle'));
     }
     public function comment(Request $request,string $idberita){
         $request->validate([
@@ -50,6 +52,8 @@ class DashboardController extends Controller
         return redirect()->back();
     }
     public function index(){
+        $pageTitle = "";
+        $pageTitle = "Beranda";
         $berita = Cache::remember('berita', 60, function () {
             return Berita::orderBy('created_at', 'desc')->limit(6)->get();
         });
@@ -76,16 +80,18 @@ class DashboardController extends Controller
     
         $agent = new Agent();
         // dd($agent->isMobile());
-        return view('welcome', compact('berita',  'datapegawai','galerifoto','agenda','video','agent','popup'));
+        return view('welcome', compact('berita',  'datapegawai','galerifoto','agenda','video','agent','popup','pageTitle'));
     }
     public function detailberita($slug){
          $berita = Berita::where('slug',$slug)->with('comments')->limit(1)->get();
+         $pageTitle = "";
+         $pageTitle = $berita[0]->judul;
          Berita::where('slug',$slug)->increment('views');
         //  dd($berita);
-         return view('post',compact('berita'));
+         return view('post',compact('berita','pageTitle'));
     }
-    public function berita(Request $request){
-   
+    public function berita(Request $request){ 
+        $pageTitle = "Berita";
         if ($request->query('cari')) {
             $cari = $request->query('cari');
             $berita = Berita::where('judul','like',"%".$cari."%")->paginate(6);
@@ -94,18 +100,21 @@ class DashboardController extends Controller
             $berita = Berita::Orderby('created_at', 'desc')->paginate(6);
         }
        
-        return view('berita', compact('berita'));
+        return view('berita', compact('berita', 'pageTitle'));
     }
     public function agend(Request $request){
    
        
-            $berita = Agenda::Orderby('created_at', 'desc')->paginate(6);
-        
+            $berita = Agenda::Orderby('created_at', 'desc')->paginate(6); 
+            $pageTitle = "";
+            $pageTitle = "Agenda";
        
-        return view('berita', compact('berita'));
+        return view('berita', compact('berita', 'pageTitle'));
     }
    
     public function ppid(){
+        $pageTitle = "";
+        $pageTitle = "PPID";
         $profile = tampilanppid::where('jenis','profile')->first();
         $visi = tampilanppid::where('jenis','visi')->first();
         $misi = tampilanppid::where('jenis','misi')->first();
@@ -116,7 +125,7 @@ class DashboardController extends Controller
         $permohonanselesai = Laporaninformasi::where('balasan', '<>', null)->count();
         $keberatanselesai = Laporankeberatan::where('balasan', '<>', null)->count();
         $ppid = Menu::where('gm', 'ppid')->get();
-        return view('ppid', compact('profile', 'visi', 'misi', 'tugas', 'informasi', 'permohonan','keberatan','permohonanselesai','keberatanselesai','ppid'));
+        return view('ppid', compact('profile', 'visi', 'misi', 'tugas', 'informasi', 'permohonan','keberatan','permohonanselesai','keberatanselesai','ppid', 'pageTitle'));
     }
     public function informasi($jenis){
         if ($jenis == "informasi-berkala") {
