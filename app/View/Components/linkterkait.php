@@ -3,8 +3,9 @@
 namespace App\View\Components;
 
 use Closure;
-use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Cache;
 
 class lnkterkait extends Component
 {
@@ -21,7 +22,9 @@ class lnkterkait extends Component
      */
     public function render(): View|Closure|string
     {
-        $link = Linkterkait::get();
+        $link = Cache::remember('link_terkait', 60, function () {
+            return Linkterkait::get();
+        }); 
         return view('components.linkterkait', compact('link'));
     }
 }
