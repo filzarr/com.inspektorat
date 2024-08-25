@@ -80,6 +80,7 @@
 
 <body class="antialiased">
     @include('sweetalert::alert')
+    <x-media-sosial></x-media-sosial>
     <x-Navbar></x-Navbar>
     @yield('content')
     @include('components.footer')
